@@ -12,13 +12,11 @@ export default function Home() {
           <img className='h-full w-full' src='assets/herosection.jpg' />
         </div>
 
-
         <div className='w-full p-14 px-28'>
           <p className='text-5xl font-medium w-full text-center'>
             At the house of Huckster, <br />we create magic that captivates <br />and transcends the solitary emotions.
           </p>
         </div>
-
 
         <div className='w-full p-10 px-28 grid gap-16'>
           <h1 className='text-8xl font-semibold w-full text-center'>CREATIONS</h1>
@@ -53,7 +51,6 @@ export default function Home() {
         {/* production partener */}
         <div className='w-full p-28 px-28 '>
           <p className='text-7xl font-semibold text-center'>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
-
         </div>
 
 
@@ -68,8 +65,10 @@ export default function Home() {
 
 
         <div className='w-full p-28 px-28 '>
-          <p className='text-8xl font-semibold text-center'>Let's Create<br/> Something!</p>
+          <p className='text-8xl font-semibold text-center'>Let's Create<br /> Something!</p>
         </div>
+
+
       </Layout>
     </div>
   )
