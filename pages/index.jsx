@@ -1,7 +1,8 @@
-import { Inter } from 'next/font/google'
+import { Inter, Syne } from 'next/font/google'
 import Layout from '@/components/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
+const syne = Syne({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -24,21 +25,43 @@ export default function Home() {
         </div>
 
         <div className='w-full p-10 px-28 grid gap-16'>
-          <h1 className='text-8xl font-semibold w-full text-center'>CREATIONS</h1>
+          <h1 className={'text-8xl font-semibold w-full text-center ' + syne.className}>CREATIONS</h1>
           <div className='w-full flex flex-col items-center'>
-            <div className='w-full grid gap-10'>
-              <div className='w-full h-96 flex  gap-10'>
-                <img className='rounded-xl w-2/3' src='assets/herosection.jpg' />
-                <img className='rounded-xl w-1/3' src='assets/herosection.jpg' />
+            <div className='w-full grid grid-cols-12 gap-3'>
+              <div className='group/creation col-span-8 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30'>
+                <img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
+                <div className='p-6 h-full w-full bg-gradient-to-b from-black/80 via-black/10 to-black/30 absolute top-0 left-0'>
+                  <h2 className={'relative top-0 left-0 group-hover/creation:left-4 group-hover/creation:top-4 transition-all ease-in-expo duration-500 text-3xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
+                </div>
               </div>
-              <div className='w-full h-96 flex  gap-10'>
+              <div className='col-span-4 h-96 overflow-hidden rounded-3xl relative border border-white/10'>
+                <img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
+                <div className='h-full w-full bg-gradient-to-b from-black/80 via-black/10 to-black/30 absolute top-0 left-0'></div>
+              </div>
+              <div className='col-span-4 h-96 overflow-hidden rounded-3xl relative border border-white/10'>
+                <img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
+                <div className='h-full w-full bg-gradient-to-b from-black/80 via-black/10 to-black/30 absolute top-0 left-0'></div>
+              </div>
+              <div className='col-span-8 h-96 overflow-hidden rounded-3xl relative border border-white/10'>
+                <img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
+                <div className='h-full w-full bg-gradient-to-b from-black/80 via-black/10 to-black/30 absolute top-0 left-0'></div>
+              </div>
+              <div className='col-span-6 h-96 overflow-hidden rounded-3xl relative border border-white/10'>
+                <img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
+                <div className='h-full w-full bg-gradient-to-b from-black/80 via-black/10 to-black/30 absolute top-0 left-0'></div>
+              </div>
+              <div className='col-span-6 h-96 overflow-hidden rounded-3xl relative border border-white/10'>
+                <img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
+                <div className='h-full w-full bg-gradient-to-b from-black/80 via-black/10 to-black/30 absolute top-0 left-0'></div>
+              </div>
+              {/* <div className='w-full h-96 flex  gap-10'>
                 <img className='rounded-xl w-1/3' src='assets/herosection.jpg' />
                 <img className='rounded-xl w-2/3' src='assets/herosection.jpg' />
               </div>
               <div className='w-full h-96 grid grid-cols-2  gap-10'>
                 <img className='rounded-xl' src='assets/herosection.jpg' />
                 <img className='rounded-xl' src='assets/herosection.jpg' />
-              </div>
+              </div> */}
             </div>
             <button className='bg-white/25 backdrop-blur-sm hover:bg-white/40 duration-300 w-48 p-3 rounded-full'>View more</button>
           </div>
