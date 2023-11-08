@@ -8,9 +8,14 @@ export default function Home() {
     <div className='overflow-auto'>
       <Layout>
         {/* hero section */}
-        <div className='w-full banner-height'>
+        {/* <div className='w-full h-screen relative top-0'>
           <img className='h-full w-full' src='assets/herosection.jpg' />
-        </div>
+        </div> */}
+
+        <section className='relative h-screen w-screen bg-black' >
+          <img className='absolute top-0 left-0 z-0 h-screen w-screen object-cover' src="https://framerusercontent.com/images/wihlKTqe05H57msmNhuMMZIAmM.png" alt="" />
+          <div className='absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black'  ></div>
+        </section>
 
         <div className='w-full p-14 px-28'>
           <p className='text-5xl font-medium w-full text-center'>
@@ -20,25 +25,34 @@ export default function Home() {
 
         <div className='w-full p-10 px-28 grid gap-16'>
           <h1 className='text-8xl font-semibold w-full text-center'>CREATIONS</h1>
-          <div className='w-full grid gap-10'>
-            <div className='w-full grid grid-cols-2  gap-10'>
-              <img className='rounded-xl' src='assets/herosection.jpg' />
-              <img className='rounded-xl' src='assets/herosection.jpg' />
+          <div className='w-full flex flex-col items-center'>
+            <div className='w-full grid gap-10'>
+              <div className='w-full h-96 flex  gap-10'>
+                <img className='rounded-xl w-2/3' src='assets/herosection.jpg' />
+                <img className='rounded-xl w-1/3' src='assets/herosection.jpg' />
+              </div>
+              <div className='w-full h-96 flex  gap-10'>
+                <img className='rounded-xl w-1/3' src='assets/herosection.jpg' />
+                <img className='rounded-xl w-2/3' src='assets/herosection.jpg' />
+              </div>
+              <div className='w-full h-96 grid grid-cols-2  gap-10'>
+                <img className='rounded-xl' src='assets/herosection.jpg' />
+                <img className='rounded-xl' src='assets/herosection.jpg' />
+              </div>
             </div>
-            <div className='w-full grid grid-cols-1  gap-10'>
-              <img className='rounded-xl' src='assets/herosection.jpg' />
-            </div>
-            <div className='w-full grid grid-cols-2  gap-10'>
-              <img className='rounded-xl' src='assets/herosection.jpg' />
-              <img className='rounded-xl' src='assets/herosection.jpg' />
-            </div>
+            <button className='bg-white/25 backdrop-blur-sm hover:bg-white/40 duration-300 w-48 p-3 rounded-full'>View more</button>
           </div>
         </div>
 
-        <div className='w-full px-28 py-20'>
-          <p className='text-9xl font-medium'>VISUAL.</p>
-          <p className='text-9xl font-medium'>NARRATIVE.</p>
-          <p className='text-9xl font-medium'>CAPTIVATING.</p>
+        <div className='w-full px-28 py-20 grid gap-40'>
+          <div>
+            <p className='text-9xl font-medium'>Let's redefine what's possible.</p>
+          </div>
+          <div >
+            <p className='text-9xl font-medium'>VISUAL.</p>
+            <p className='text-9xl font-medium'>NARRATIVE.</p>
+            <p className='text-9xl font-medium'>CAPTIVATING.</p>
+          </div>
         </div>
 
 
