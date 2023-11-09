@@ -1,4 +1,5 @@
 import { Syne } from 'next/font/google'
+import Link from 'next/link'
 import React from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
@@ -17,9 +18,9 @@ const Navbar = () => {
           <img className='w-32' src="/assets/HucksterLogo.png" alt="" />
         </div>
         <div className='flex gap-10'>
-          <p>Home</p>
-          <p>About Us</p>
-          <p>Our Work</p>
+          <Link href={'/'}>Home</Link>
+          <Link href={'/aboutus'}>About Us</Link>
+          <Link href={'/work'}>Our Work</Link>
           <p>Our Services</p>
           <p>Media Blogs</p>
           <p>Contact Us</p>
