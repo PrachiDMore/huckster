@@ -17,13 +17,13 @@ const Navbar = () => {
         <div>
           <img className='w-32' src="/assets/HucksterLogo.png" alt="" />
         </div>
-        <div className='flex gap-10'>
-          <Link href={'/'}>Home</Link>
-          <Link href={'/aboutus'}>About Us</Link>
-          <Link href={'/work'}>Our Work</Link>
-          <p>Our Services</p>
-          <p>Media Blogs</p>
-          <p>Contact Us</p>
+        <div className='flex gap-3'>
+          <Link className='text-white/70 hover:text-white duration-200 hover:bg-white/20 px-3 py-2 rounded-full' href={'/'}>Home</Link>
+          <Link className='text-white/70 hover:text-white duration-200 hover:bg-white/20 px-3 py-2 rounded-full' href={'/aboutus'}>About Us</Link>
+          <Link className='text-white/70 hover:text-white duration-200 hover:bg-white/20 px-3 py-2 rounded-full' href={'/work'}>Our Work</Link>
+          <Link className='text-white/70 hover:text-white duration-200 hover:bg-white/20 px-3 py-2 rounded-full' href={'/'}>Our Services</Link>
+          <Link className='text-white/70 hover:text-white duration-200 hover:bg-white/20 px-3 py-2 rounded-full' href={'/'}>Media Blogs</Link>
+          <Link className='text-white/70 hover:text-white duration-200 hover:bg-white/20 px-3 py-2 rounded-full' href={'/'}>Contact Us</Link>
         </div>
         {/* <div>
           <FiSearch className='text-xl '/>

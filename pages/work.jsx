@@ -2,6 +2,7 @@ import Layout from '@/components/Layout'
 import React from 'react'
 import { Inter, Syne } from 'next/font/google'
 import WorkCard from '@/components/WorkCard'
+import Button from '@/components/Button'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -21,9 +22,7 @@ const work = () => {
           <WorkCard className={'col-span-6'} />
           <WorkCard className={'col-span-6'} />
         </div>
-        <div className='border border-white/50 p-1 rounded-full'>
-          <button className='bg-white/20 backdrop-blur-sm hover:bg-white/30 duration-300 w-48 p-3 rounded-full '>Watch more</button>
-        </div>
+        <Button className={'w-48'} text={"Watch More"}/>
       </div>
 
       <div className='w-full p-28 px-28 '>

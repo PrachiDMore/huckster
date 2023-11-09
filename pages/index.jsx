@@ -1,6 +1,7 @@
 import { Inter, Syne } from 'next/font/google'
 import Layout from '@/components/Layout'
 import { useState } from 'react'
+import Button from '@/components/Button'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -90,9 +91,7 @@ export default function Home() {
                 <img className='rounded-xl' src='assets/herosection.jpg' />
               </div> */}
 						</div>
-						<div className='border border-white/50 p-1 rounded-full'>
-							<button className='bg-white/20 backdrop-blur-sm hover:bg-white/30 duration-300 w-48 p-3 rounded-full '>Watch more</button>
-						</div>
+						<Button className={"w-48"} text={"Watch More"}/>
 					</div>
 				</div>
 
@@ -100,7 +99,7 @@ export default function Home() {
 					<div className='w-screen h-screen '>
 						<img className='h-full w-full bg-cover z-0' src="/assets/test.webp" alt="" />
 						{/* <div className='w-screen h-screen bg-black/30 z-40'></div> */}
-						<div className='w-screen h-screen bg-gradient-to-r from-black/80  to-black/40  absolute top-0'></div>
+						<div className='w-screen h-screen bg-gradient-to-r from-black/90  to-black/40  absolute top-0'></div>
 					</div>
 					<div className='absolute top-10'>
 						<div className='w-full px-28 py-14 grid gap-40'>
@@ -129,7 +128,7 @@ export default function Home() {
 
 				{/* production partener */}
 				<div className='w-full p-28 px-28 '>
-					<p className='text-7xl font-semibold text-center'>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
+					<p className={'text-7xl font-semibold text-center ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 				</div>
 
 

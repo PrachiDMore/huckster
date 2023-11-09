@@ -4,6 +4,7 @@ import { BiLogoLinkedin } from 'react-icons/bi'
 import { FaFacebookF, FaTiktok } from 'react-icons/fa'
 import { Inter, Syne } from 'next/font/google'
 import Link from 'next/link'
+import Button from './Button'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -49,10 +50,8 @@ const Footer = () => {
           <div className='w-2/6'>
             <h1 className={'text-xl font-semibold text-white pb-5 ' + syne.className}>Subscribe to our newsletter</h1>
             <div className='grid gap-4'>
-              <input className='border border-white/50 rounded-full px-7 py-3 outline-none bg-transparent w-full '  type="email" placeholder='Enter your email id' />
-              <div className='border border-white/50 p-1 w-full rounded-full'>
-                <button className='bg-white/20 backdrop-blur-sm hover:bg-white/30 duration-300 w-full textsm p-2 rounded-full '>Subscribe</button>
-              </div>
+              <input className='bg-white/20 rounded-full px-7 py-3 outline-none w-full '  type="email" placeholder='Enter your email id' />
+             <Button text={"Subscribe"}/>
             </div>
           </div>
         </div>
