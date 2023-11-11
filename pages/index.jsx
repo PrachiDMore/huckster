@@ -3,13 +3,31 @@ import Layout from '@/components/Layout'
 import { useState } from 'react'
 import Button from '@/components/Button'
 import Dropdown from '@/components/Dropdown'
+import 'swiper/css';
+import TeamCard from '@/components/TeamCard'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
 
 export default function Home() {
 	const [index, setIndex] = useState(0)
-
+	const breakpoints = {
+    1024: {
+      slidesPerView: 4,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    648: {
+      slidesPerView: 2,
+    },  
+    320: {
+      slidesPerView: 1,
+    },
+  }
 
 	return (
 		<div className='overflow-auto'>
@@ -138,6 +156,27 @@ export default function Home() {
 				{/* production partener */}
 				<div className='w-full p-28 px-28 '>
 					<p className={'text-7xl font-semibold text-center ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
+
+					<div className='mt-20 w-full'>
+            <Swiper
+            className='m-auto'
+              grabCursor={true}
+              loop={true}
+              breakpoints={breakpoints}
+              spaceBetween={0}
+              slidesPerView={4}
+              modules={[Autoplay]}
+              autoplay={{
+                delay: 2000
+              }}
+            >
+              <SwiperSlide className='p-6 h-20 w-48 border border-white flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="" /></SwiperSlide>
+              <SwiperSlide className='p-6 h-20 w-48 border border-white flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide>
+              <SwiperSlide className='p-6 h-20 w-48 border border-white flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="" /></SwiperSlide>
+              <SwiperSlide className='p-6 h-20 w-48 border border-white flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide>
+              <SwiperSlide className='p-6 h-20 w-48 border border-white flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="" /></SwiperSlide>
+            </Swiper>
+          </div>
 				</div>
 
 
@@ -146,7 +185,7 @@ export default function Home() {
 					<img className='w-screen h-screen ' src='/assets/foryou.jpg' />
 					<div className='w-screen h-screen bg-black/60 absolute top-0'></div>
 					<div className='w-screen h-screen flex justify-center items-center absolute top-0'>
-						<p className='text-6xl font-semibold text-white'>FOR YOU</p>
+						<Link href={'/aboutus'} className='text-6xl font-semibold text-white/60 hover:text-white duration-200 '>FOR YOU</Link>
 					</div>
 				</div>
 
