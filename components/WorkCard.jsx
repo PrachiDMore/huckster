@@ -8,7 +8,7 @@ const WorkCard = ({ className }) => {
   return (
     <div className={'group/workcard bg-main transition-all duration-700 border hover:bg-hover border-white/50 rounded-3xl p-3 ' + className}>
       <div className='relative overflow-hidden rounded-2xl'>
-        <img className='group-hover/workcard:scale-110 h-80 rounded-2xl w-full transition-all duration-500 cursor-pointer object-cover' src="/assets/work.webp" alt="" />
+        <img className='hover:grayscale group-hover/workcard:scale-110 h-80 rounded-2xl w-full transition-all duration-500 cursor-pointer object-cover' src="/assets/work.webp" alt="" />
       </div>
       <div className='p-4'>
         <p className={'delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-lg font-semibold text-white ' + syne.className}>Sarah</p>

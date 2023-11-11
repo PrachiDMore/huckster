@@ -2,6 +2,7 @@ import Layout from '@/components/Layout'
 import React from 'react'
 import { Inter, Syne } from 'next/font/google'
 import TeamCard from '@/components/TeamCard'
+import HeroSection from '@/components/HeroSection'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -9,27 +10,35 @@ const syne = Syne({ subsets: ['latin'] })
 const aboutus = () => {
   return (
     <Layout>
-      <div className='pt-32'>
+      {/* <div className='pt-32'>
         <h1 className={'mx-auto p-10   text-8xl font-semibold w-full text-center gradientText ' + syne.className}>For You</h1>
         <p className='text-5xl text-white/80 font-medium text-center pt-7'>Positioned as a guiding force,<br /> it navigates through challenge*</p>
-      </div>
+      </div> */}
+      <HeroSection heading={'For You'} para={'Positioned as a guiding force, it navigates through challenge*'} />
 
-      <div className='px-28'>
-        <h1>at the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
-        <p>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. </p>
-        <p>What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. </p>
-        <p>Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
+      <div className='px-28 py-8 h-screen w-screen relative'>
+        <img className='h-screen w-screen absolute top-0 left-0 z-[0] ' src="/assets/about.png" alt="" />
+        <div className={'gap-3 flex flex-col justify-end py-14 px-28 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-to-r from-transparent to-black ' + syne.className}></div>
+        <div className='flex flex-col justify-center items-end px-28 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' >
+          <div className='w-1/2'>
+            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-3xl font-semibold text-white pb-5 ' + syne.className}>At the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
+            <p className={'text-lg pb-3 ' + inter.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. </p>
+            <p className={'text-lg pb-3 ' + inter.className}>What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. </p>
+            <p className={'text-lg pb-3 ' + inter.className}>Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
+          </div>
+
+        </div>
       </div>
 
       <div className='px-28'>
         <h1 className={'mx-auto p-12 text-6xl font-semibold w-full text-center gradientText ' + syne.className}>OUR CREATIVE CULTURE</h1>
         <div className='grid grid-cols-3 gap-5'>
-          <TeamCard/>
-          <TeamCard/>
-          <TeamCard/>
-          <TeamCard/>
-          <TeamCard/>
-          <TeamCard/>
+          <TeamCard />
+          <TeamCard />
+          <TeamCard />
+          <TeamCard />
+          <TeamCard />
+          <TeamCard />
         </div>
         <p className={'mx-auto p-12 text-xl font-semibold w-full text-center gradientText ' + syne.className}>Where EXTRAORDINARY becomes the norm!</p>
       </div>

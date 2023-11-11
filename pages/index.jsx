@@ -2,12 +2,15 @@ import { Inter, Syne } from 'next/font/google'
 import Layout from '@/components/Layout'
 import { useState } from 'react'
 import Button from '@/components/Button'
+import Dropdown from '@/components/Dropdown'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
 
 export default function Home() {
 	const [index, setIndex] = useState(0)
+
+
 	return (
 		<div className='overflow-auto'>
 			<Layout>
@@ -91,7 +94,7 @@ export default function Home() {
                 <img className='rounded-xl' src='assets/herosection.jpg' />
               </div> */}
 						</div>
-						<Button className={"w-48"} text={"Watch More"}/>
+						<Button className={"w-48"} text={"Watch More"} />
 					</div>
 				</div>
 
@@ -124,6 +127,12 @@ export default function Home() {
 				<div className='w-full py-20 px-28 grid gap-6'>
 					<h1 className={'text-8xl font-semibold ' + syne.className}>SERVICES</h1>
 					<p className='text-4xl font-medium'>Cause we like to get straight to the point</p>
+
+					<Dropdown number={'01'} heading={'Design'} desc={'The story begins'}/>
+					<Dropdown number={'02'} heading={'PRE-PRODUCTION'} desc={'The characters are introduced'}/>
+					<Dropdown number={'03'} heading={'PRODUCTION'} desc={'The main story hook'}/>
+					<Dropdown number={'04'} heading={'POST-PRODUCTION'} desc={'The climax'}/>
+
 				</div>
 
 				{/* production partener */}
@@ -141,19 +150,19 @@ export default function Home() {
 					</div>
 				</div>
 
-{/* 
+				{/* 
 				<div className='w-full p-28 px-28 '>
 					<p className='text-8xl font-semibold text-center'>Let's Create<br /> Something!</p>
 				</div> */}
 
 				<div className='w-full p-28 px-28 '>
-        <div className='w-full py-10 bg-gradient-to-b from-white/40  to-white/0  flex flex-col items-center gap-10 border border-white/50 rounded-3xl'>
-          <img className='w-36' src="/assets/HucksterLogo.png" alt="" />
-          <div className=' '>
-            <p className={'text-8xl font-semibold text-center ' + syne.className}>Let's Create<br />Something!</p>
-          </div>
-        </div>
-      </div>
+					<div className='w-full py-10 bg-gradient-to-b from-white/40  to-white/0  flex flex-col items-center gap-10 border border-white/50 rounded-3xl'>
+						<img className='w-36' src="/assets/HucksterLogo.png" alt="" />
+						<div className=' '>
+							<p className={'text-8xl font-semibold text-center ' + syne.className}>Let's Create<br />Something!</p>
+						</div>
+					</div>
+				</div>
 
 			</Layout>
 		</div>
