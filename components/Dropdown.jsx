@@ -30,13 +30,13 @@ const Dropdown = ({ number, heading, desc, }) => {
         position: "relative",
         top: "0"
       }
-    }} animate={control} initial="hidden" className='hidden lg:gap-5 gap-3 '>
+    }} animate={control} initial="hidden" className='flex lg:gap-5 gap-3 '>
       <p className={'lg:text-7xl text-4xl lg:w-32 w-[60px] font-bold text-gray-600/80 ' + syne.className}>{number}</p>
       <div className=' w-full h-max bg-white/10 rounded-lg px-4 py-3 transition-all'>
         <button className='w-full flex items-center justify-between' onClick={() => setIsOpen((prev) => !prev)}>
           <div className='flex flex-col justify-start items-start'>
             <h1 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-xl font-semibold text-white ' + syne.className}>{heading}</h1>
-            <p className={'relative top-0 left-0 lg:text-base text-sm transition-all ease-in-expo duration-700 font-semibold text-white ' + syne.className}>{desc}</p>
+            <p className={'text-left relative top-0 left-0 lg:text-base text-sm transition-all ease-in-expo duration-700 font-semibold text-white ' + syne.className}>{desc}</p>
           </div>
           {
             !isOpen ? (<BsArrowDown className='lg:text-2xl text-xl' />) : (<BsArrowUp className='lg:text-2xl text-xl' />)
@@ -44,9 +44,7 @@ const Dropdown = ({ number, heading, desc, }) => {
         </button>
         {isOpen && (
           <div className='p-3 mt-3 bg-white/20  rounded-lg' >
-            <p>1. Creative Development</p>
-            <p>2. Script Writing</p>
-            <p>3. Storyboarding and Pre-Visuals</p>
+            <p>Elevate your narrative with our visionary design solutions, where creativity meets precision in every frame, making your story visually captivating and unforgettable.</p>
           </div>
         )}
       </div>
