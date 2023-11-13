@@ -1,15 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BsArrowUp, BsArrowDown } from 'react-icons/bs'
 import { Inter, Syne } from 'next/font/google'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
 
-const Dropdown = ({number, heading, desc, }) => {
+const Dropdown = ({ number, heading, desc, }) => {
   const [isOpen, setIsOpen] = useState(false)
-
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
   return (
-    <div className=' flex gap-5'>
+    <motion.div ref={ref} variants={{
+      hidden: {
+        opacity: 0,
+        position: "relative",
+        top: "-30%"
+      },
+      visible: {
+        opacity: 1,
+        position: "relative",
+        top: "0"
+      }
+    }} animate={control} initial="hidden" className=' flex gap-5'>
       <p className={'text-7xl w-32 font-bold text-gray-600/80 ' + syne.className}>{number}</p>
       <div className=' w-full h-max bg-white/10 rounded-lg px-4 py-3 transition-all'>
         <button className='w-full flex items-center justify-between' onClick={() => setIsOpen((prev) => !prev)}>
@@ -29,7 +50,7 @@ const Dropdown = ({number, heading, desc, }) => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
