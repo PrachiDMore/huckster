@@ -30,7 +30,7 @@ const Dropdown = ({ number, heading, desc, }) => {
         position: "relative",
         top: "0"
       }
-    }} animate={control} initial="hidden" className=' flex lg:gap-5 gap-3 '>
+    }} animate={control} initial="hidden" className='hidden lg:gap-5 gap-3 '>
       <p className={'lg:text-7xl text-4xl lg:w-32 w-[60px] font-bold text-gray-600/80 ' + syne.className}>{number}</p>
       <div className=' w-full h-max bg-white/10 rounded-lg px-4 py-3 transition-all'>
         <button className='w-full flex items-center justify-between' onClick={() => setIsOpen((prev) => !prev)}>

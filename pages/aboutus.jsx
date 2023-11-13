@@ -35,19 +35,19 @@ const aboutus = () => {
         </div>
       </div>
 
-      <div className='lg:px-28 px-5 '>
-        <h1 className={'mx-auto lg:p-12 py-7 lg:text-6xl text-3xl font-semibold w-full text-center gradientText ' + syne.className}>OUR CREATIVE CULTURE</h1>
+      <div className='lg:px-28 px-5 w-screen'>
+        <h1 className={'mx-auto lg:p-12 py-7 lg:text-6xl text-2xl font-semibold w-full text-center gradientText ' + syne.className}>OUR CREATIVE CULTURE</h1>
         <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
           <TeamCard />
           <TeamCard />
           <TeamCard />
         </div>
-        <p className={'mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY becomes the norm!</p>
+        <p className={'hidden mx-auto lg:p-12 py-7 w-full lg:block lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY becomes the norm!</p>
       </div>
 
-      <div className='lg:px-28 px-5'>
+      <div className='lg:px-28 px-5 lg:block hidden'>
         <h1 className={'mx-auto p-12 lg:text-6xl text-3xl font-semibold w-full text-center gradientText ' + syne.className}>WHAT'S IMPORTANT!</h1>
-        <div className='flex flex-col lg:items-end lg:gap-40 gap-96 pb-20 pr-28'>
+        <div className='flex flex-col lg:items-end lg:gap-40 gap-96'>
           <div className='relative w-full'>
             <p className={'lg:text-9xl text-7xl w-28 font-bold text-gray-600/80 ' + syne.className}>01</p>
             <div className='w-full absolute lg:top-16 top-8 lg:left-24 left-14'>

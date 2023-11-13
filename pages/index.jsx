@@ -31,23 +31,19 @@ export default function Home() {
 	}
 
 	return (
-		<Layout className="snapscroll">
+		<Layout>
 			{/* hero section */}
-			{/* <div className='w-full h-screen relative top-0'>
-          <img className='h-full w-full' src='assets/herosection.jpg' />
-        </div> */}
-
-			<section className='snap-start relative h-screen w-screen bg-black' >
+			<section className='relative h-screen w-screen bg-black' >
 				<img className={index === 0 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} src="https://d135u4jtzauizi.cloudfront.net/A24_PRISCILLA_A24_GIF03.gif" alt="" />
 				<img className={index === 1 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[1] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[1] opacity-0 duration-500'} src="https://d135u4jtzauizi.cloudfront.net/The-Curse-Trailer-Full-16x9-No-Captions_SITE-GIF.gif" alt="" />
 				<img className={index === 2 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-0 duration-500'} src="https://d135u4jtzauizi.cloudfront.net/DS_NEWSBLAST_GIF03_larger.gif" alt="" />
 				<img className={index === 3 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-0 duration-500'} src="https://d135u4jtzauizi.cloudfront.net/TIC_GIF_02_A24.gif" alt="" />
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
 				<div className={'gap-3 flex flex-col justify-end py-14 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
-					<h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-4xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-4xl capitalize'}>Priscilla</h1>
-					<h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-4xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-4xl capitalize'}>The Curse</h1>
-					<h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-4xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-4xl capitalize'}>Dream Scenario</h1>
-					<h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-4xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-4xl capitalize'}>The Iron Claw</h1>
+					<h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Priscilla</h1>
+					<h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>The Curse</h1>
+					<h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Dream Scenario</h1>
+					<h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>The Iron Claw</h1>
 				</div>
 			</section>
 
@@ -107,13 +103,13 @@ export default function Home() {
 					<div className={'w-full lg:px-28 px-5  grid ' + syne.className}>
 						<p style={{
 							WebkitTextStroke: "1px white"
-						}} className='text-transparent lg:text-9xl text-5xl font-medium'>VISUAL.</p>
+						}} className='text-transparent lg:text-9xl text-4xl font-medium'>VISUAL.</p>
 						<p style={{
 							WebkitTextStroke: "1px white"
-						}} className='text-transparent lg:text-9xl text-5xl font-medium'>NARRATIVE.</p>
+						}} className='text-transparent lg:text-9xl text-4xl font-medium'>NARRATIVE.</p>
 						<p style={{
 							WebkitTextStroke: "1px white"
-						}} className='text-transparent lg:text-9xl text-5xl font-medium'>CAPTIVATING.</p>
+						}} className='text-transparent lg:text-9xl text-4xl font-medium'>CAPTIVATING.</p>
 					</div>
 				</div>
 			</div>
@@ -176,7 +172,7 @@ export default function Home() {
 					<p className='text-8xl font-semibold text-center'>Let's Create<br /> Something!</p>
 				</div> */}
 
-			<div className='w-full lg:py-28 py-10 lg:px-28 px-5'>
+			<div className='w-full lg:py-28 py-10 lg:px-28 px-5 hidden'>
 				<div className='w-full py-10 bg-gradient-to-b lg:from-white/40 from-white/20 to-white/0  flex flex-col items-center gap-10 border border-white/50 rounded-3xl'>
 					<img className='lg:w-36 w-28' src="/assets/HucksterLogo.png" alt="" />
 					<div className=' '>
