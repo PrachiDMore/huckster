@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -17,6 +21,7 @@
   -webkit-text-fill-color: transparent;
   width: max-content;
 }
+
 /* 
 .bg-gradient-test {
   backdrop-filter: blur(10px);
