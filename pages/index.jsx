@@ -11,6 +11,7 @@ import { Autoplay } from 'swiper/modules';
 import Link from 'next/link'
 import { motion } from 'framer-motion';
 import Reveal from '@/components/Reveal'
+import SlideReveal from '@/components/SlideReveal'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -35,17 +36,19 @@ export default function Home() {
 	return (
 		<Layout>
 			{/* hero section */}
-			<section className='relative h-screen w-screen bg-black' >
+			<section className='relative h-screen w-screen bg-black cursor-none' >
+				<div className='cursor-dot'></div>
+				<div className='cursor-outline'></div>
 				<Image className={index === 0 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/A24_PRISCILLA_A24_GIF03.gif" alt="" />
 				<Image className={index === 1 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[1] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[1] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/The-Curse-Trailer-Full-16x9-No-Captions_SITE-GIF.gif" alt="" />
 				<Image className={index === 2 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/DS_NEWSBLAST_GIF03_larger.gif" alt="" />
 				<Image className={index === 3 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/TIC_GIF_02_A24.gif" alt="" />
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
 				<div className={'gap-3 flex flex-col justify-end py-14 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
-					<h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Priscilla</h1>
-					<h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>The Curse</h1>
-					<h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Dream Scenario</h1>
-					<h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>The Iron Claw</h1>
+					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Priscilla</h1></SlideReveal>
+					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>The Curse</h1></SlideReveal>
+					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Dream Scenario</h1></SlideReveal>
+					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>The Iron Claw</h1></SlideReveal>
 				</div>
 			</section>
 
@@ -170,22 +173,22 @@ export default function Home() {
 				<div className={'flex flex-col items-center lg:gap-32 gap-16 ' + syne.className}>
 					<div className='relative lg:w-8/12 w-[85%] h-max mt-20'>
 					<h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>01</h1>
-						<h2 className='text-white/90 font-bold lg:text-4xl text-3xl'>Design</h2>
+						<h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Design</h2>
 						<p className='mt-1 lg:text-lg lg:w-[90%] w-full'>Unleash the power of storytelling with our design service, where creative development, expert script writing, and dynamic storyboard and pre-visuals converge to bring your vision to cinematic life.</p>
 					</div>
 					<div className='lg:left-32 left-0 relative lg:w-8/12 w-[85%] h-max'>
 					<h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>02</h1>
-					<h2 className='text-white/90 font-bold lg:text-4xl text-3xl'>Pre-Production</h2>
+					<h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Pre-Production</h2>
 					<p className='mt-1 lg:text-lg lg:w-[90%] w-full'>Streamline your narrative journey with our pre-production expertise, seamlessly managing administration, logistics, location scouting, talent casting, and crew sourcing for a flawless project launch.</p>
 					</div>
 					<div className='relative lg:w-8/12 w-[85%] h-max'>
 					<h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>03</h1>
-						<h2 className='text-white/90 font-bold lg:text-4xl text-3xl'>Production</h2>
+						<h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Production</h2>
 						<p className='mt-1 lg:text-lg lg:w-[90%] w-full'>Embark on a production journey with us, offering scalable services, award-winning directors and producers, in-house cinema gear, a collaborative on-set culture, and top-notch studio space and rentals.</p>
 					</div>
 					<div className='lg:left-32 left-0 relative lg:w-8/12 w-[85%] h-max'>
 					<h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>04</h1>
-					<h2 className='text-white/90 font-bold lg:text-4xl text-3xl'>Post-Production</h2>
+					<h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Post-Production</h2>
 					<p className='mt-1 lg:text-lg lg:w-[90%] w-full'>Crafting cinematic excellence in post-production with precision editing, dynamic motion graphics, immersive animation, impactful sound design, seamless color grading, and multi-platform mastering for unparalleled delivery.</p>
 					</div>
 					{/* <Dropdown number={'01'} heading={'Design'} desc={'The story begins'} />

@@ -14,7 +14,7 @@ const work = () => {
       {/* <div className='pt-32'>
         <h1 className={'mx-auto p-10   text-8xl font-semibold w-full text-center gradientText ' + syne.className}>CREATIONS</h1>
       </div> */}
-      <HeroSection heading={'Creations'} />
+      <HeroSection heading={'Creations'} img="https://framerusercontent.com/images/2nmoFrxiQPkVKjCROmvKqLCU.jpg" para={"From coming up with creative concepts to delivering outstanding campaigns, we're your friendly, fun-loving crew ready to turn your project dreams into reality!"} />
 
       <p className='lg:text-2xl text-lg cursor-pointer font-medium text-center text-white/50 pt-10'><span className='text-white'>All</span> | Commercial Ads </p>
 

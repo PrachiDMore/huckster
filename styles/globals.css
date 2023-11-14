@@ -33,3 +33,47 @@ body {
   scroll-snap-points-y: repeat(0px);
   scroll-snap-type: y mandatory;
 } */
+
+.slide-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  transform-origin: bottom;
+  z-index: 20000;
+}
+
+.slide-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  transform-origin: top;
+  z-index: 20000;
+}
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10;
+}
