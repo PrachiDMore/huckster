@@ -5,10 +5,10 @@
 
 body {
   -webkit-tap-highlight-color: transparent;
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 *{
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 
 ::-webkit-scrollbar {
@@ -92,4 +92,21 @@ Link{
 
 a{
   outline: none !important;
+}
+
+.animate-scroll{
+  height: 2px;
+  width: 150px;
+  animation: scrollanimate 2s infinite cubic-bezier(0.22, 1, 0.36, 1); 
+}
+
+@keyframes scrollanimate {
+  0%{
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100%{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }

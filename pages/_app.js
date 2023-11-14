@@ -26,8 +26,6 @@ export default function App({ Component, pageProps }) {
         top: `${posY}px`
       }, { duration: 1000, fill: "forwards" })
     })
-    return () => {
-    }
   }, [])
 
   return <AnimatePresence mode='wait'>

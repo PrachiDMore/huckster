@@ -18,24 +18,7 @@ const HeroSection = ({ heading, para, img }) => {
 
         <div className='mt-5 ml-2 w-32 rotate-90 origin-left font-light gradientText flex gap-5 items-center'>
           <p>Scroll</p>
-          <motion.span initial={{
-            height: "2px",
-            width: "150px",
-            scaleX: 0,
-            transformOrigin: "left"
-          }} animate={{
-            height: "2px",
-            scaleX: 1,
-            width: "150px",
-            transformOrigin: "left"
-          }} exit={{
-            height: "2px",
-            width: "150px",
-            scaleX: 0,
-            transformOrigin: "left"
-          }}
-            transition={{ duration: 2, repeat: "infinity" }}
-            className='bg-gradient-to-r from-transparent to-white rounded-xl flex' ></motion.span>
+          <span className='animate-scroll bg-gradient-to-r from-transparent to-white rounded-xl flex' ></span>
         </div>
       </div>
     </section>
