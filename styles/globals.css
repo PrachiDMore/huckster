@@ -5,6 +5,10 @@
 
 body {
   -webkit-tap-highlight-color: transparent;
+  cursor: none !important;
+}
+*{
+  cursor: none !important;
 }
 
 ::-webkit-scrollbar {
@@ -57,15 +61,19 @@ body {
 }
 
 .cursor-dot {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
   background-color: white;
+  z-index: 56;
+  transition: 50ms;
 }
 
 .cursor-outline {
-  width: 30px;
-  height: 30px;
-  border: 2px solid white;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.711);
+  backdrop-filter: blur(5px);
+  z-index: 55;
 }
 
 .cursor-dot,
@@ -75,5 +83,13 @@ body {
   left: 0;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: 10;
+  pointer-events: none;
+}
+
+Link{
+  outline: none;
+}
+
+a{
+  outline: none !important;
 }

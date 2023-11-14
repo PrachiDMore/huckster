@@ -14,20 +14,29 @@ const HeroSection = ({ heading, para, img }) => {
       <div className={'gap-3 flex flex-col justify-center py-14 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-to-r to-transparent from-black ' + syne.className}></div>
       <div className={'gap-3 flex flex-col justify-center py-14 lg:px-28 px-5 absolute top-0 left-0 z-20 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
         <SlideReveal delay={0.4}><h1 className='gradientText w-max duration-150 text-white font-bold lg:text-7xl text-4xl capitalize'>{heading}</h1></SlideReveal>
-        <SlideReveal delay={0.8}><p  className={'text-lg lg:w-2/4 ' + syne.className}>{para}</p></SlideReveal>
-        {/* <motion.p initial={{
-          opacity: 0,
-          y: 25
-        }}
-          animate={{
-            opacity: 1,
-            y: 0
+        <SlideReveal delay={0.8}><p className={'text-lg lg:w-2/4 ' + syne.className}>{para}</p></SlideReveal>
+
+        <div className='mt-5 ml-2 w-32 rotate-90 origin-left font-light gradientText flex gap-5 items-center'>
+          <p>Scroll</p>
+          <motion.span initial={{
+            height: "2px",
+            width: "150px",
+            scaleX: 0,
+            transformOrigin: "left"
+          }} animate={{
+            height: "2px",
+            scaleX: 1,
+            width: "150px",
+            transformOrigin: "left"
+          }} exit={{
+            height: "2px",
+            width: "150px",
+            scaleX: 0,
+            transformOrigin: "left"
           }}
-          transition={{
-            delay: 0.8,
-            duration: 0.75,
-            ease: [0.22, 1, 0.36, 1]
-          }} className={'text-lg lg:w-2/4 ' + syne.className}>{para}</motion.p> */}
+            transition={{ duration: 2, repeat: "infinity" }}
+            className='bg-gradient-to-r from-transparent to-white rounded-xl flex' ></motion.span>
+        </div>
       </div>
     </section>
   )
