@@ -17,31 +17,31 @@ const Footer = () => {
           <div className='lg:w-1/6 w-full '>
             <img className='w-36 lg:pt-0 pt-2' src="/assets/HucksterLogo.png" alt="" />
             <div className='lg:grid lg:grid-cols-3 lg:gap-5 flex gap-3 pt-4'>
-              <div className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
+              <Link href={'https://twitter.com/huckstermena'} className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
                 <BsTwitter className='lg:text-xl ' />
-              </div>
-              <div className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
+              </Link>
+              <Link href={'https://ae.linkedin.com/company/huckstermena'} className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
                 <BiLogoLinkedin className='lg:text-xl ' />
-              </div>
-              <div className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
+              </Link>
+              <Link href={'https://www.facebook.com/huckstermena/'} className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
                 <FaFacebookF className='lg:text-xl ' />
-              </div>
-              <div className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
+              </Link>
+              <Link href={'https://www.instagram.com/huckstermena'} className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
                 <BsInstagram className='lg:text-xl ' />
-              </div>
-              <div className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
+              </Link>
+              <Link href={'https://www.tiktok.com/@huckstermena'} className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
                 <FaTiktok className='lg:text-xl ' />
-              </div>
-              <div className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
+              </Link>
+              <Link href={'https://www.youtube.com/@huckstermena'} className='bg-white/30 hover:bg-white/50 w-min duration-300 cursor-pointer rounded-full lg:p-3 p-2'>
                 <BsYoutube className='lg:text-xl ' />
-              </div>
+              </Link>
             </div>
           </div>
           <div className='3/6 flex flex-col'>
             <h1 className={'text-xl font-semibold pb-5 ' + syne.className}>Keep Exploring</h1>
             <Link href={'/'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Home</Link>
             <Link href={'/work'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Our Work</Link>
-            <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Our Services</p>
+            <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Media</p>
             <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Download portfolio</p>
             <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Career</p>
             <Link href={'/contactus'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Contact Us</Link>

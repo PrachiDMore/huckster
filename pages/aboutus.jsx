@@ -50,16 +50,16 @@ const aboutus = () => {
         <div className='flex flex-col lg:items-end lg:gap-40 gap-96'>
           <div className={'flex flex-col items-center lg:gap-32 gap-16 ' + syne.className}>
             <div className='relative lg:w-8/12 w-[85%] h-max mt-20'>
-              <h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>01</h1>
+              <h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-20 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>01</h1>
               <h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Our Take on Sustainability</h2>
               <p className={'mt-1 lg:text-lg lg:w-[90%] w-full'}>Huckster Productions stands as more than just a production house; it's a catalyst for sustainability and a commitment to achieving carbon negativity. With a focused and deliberate effort towards a greener future, we're reshaping the media landscape.</p>
-              <p className={'mt-1 lg:text-lg lg:w-[90%] w-full hidden'}>Through coordinated investments and a conscientious approach, we're inviting future clients and partners to join us in this groundbreaking movement. It's a space that fosters talent and brings together like-minded individuals. From implementing eco-friendly production methods to innovative ways of giving back to nature, Huckster Productions is poised to turn these aspirations into reality.</p>
+              <p className={'mt-1 lg:text-lg lg:w-[90%] w-full '}>Through coordinated investments and a conscientious approach, we're inviting future clients and partners to join us in this groundbreaking movement. It's a space that fosters talent and brings together like-minded individuals. From implementing eco-friendly production methods to innovative ways of giving back to nature, Huckster Productions is poised to turn these aspirations into reality.</p>
             </div>
             <div className='lg:left-32 left-0 relative lg:w-8/12 w-[85%] h-max'>
-              <h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>02</h1>
+              <h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-20 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>02</h1>
               <h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Our Vision</h2>
               <p className='mt-1 lg:text-lg lg:w-[90%] w-full'>A daring vision, dreamt to amplify the narratives on the canvas. The eyes conjure the artistic echoes, solitary emotions and the culture through the moving frames with the bespoke craftsmanship of contemporary motion art.</p>
-              <p className='mt-1 lg:text-lg lg:w-[90%] w-full hidden'>The vision is to reimagine genres, weave narratives to bridge the time across cultures. Our commitment does not stop at creativity, it involves the need of the hour commitment to responsibility, a pursuit to achieve sustainability.</p>
+              <p className='mt-1 lg:text-lg lg:w-[90%] w-full '>The vision is to reimagine genres, weave narratives to bridge the time across cultures. Our commitment does not stop at creativity, it involves the need of the hour commitment to responsibility, a pursuit to achieve sustainability.</p>
             </div>
           </div>
         </div>
