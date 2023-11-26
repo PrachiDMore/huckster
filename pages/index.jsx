@@ -194,10 +194,10 @@ export default function Home() {
 						<h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Post-Production</h2>
 						<p className='mt-1 lg:text-lg lg:w-[90%] w-full'>Crafting cinematic excellence in post-production with precision editing, dynamic motion graphics, immersive animation, impactful sound design, seamless color grading, and multi-platform mastering for unparalleled delivery.</p>
 					</div> */}
-					<Dropdown number={'01'} heading={'Design'} desc={'The story begins'} />
-					<Dropdown number={'02'} heading={'Pre-Production'} desc={'The characters are introduced'} />
-					<Dropdown number={'03'} heading={'Production'} desc={'The main story hook'} />
-					<Dropdown number={'04'} heading={'Post-Production'} desc={'The climax'} />
+					<Dropdown number={'01'} title={'Design'} list={["Creative Development", "Script Writing", "Storyboarding and Pre-Visuals"]} subtitle={'The story begins'} />
+					<Dropdown number={'02'} title={'Pre-Production'} list={["Project Management", "Administrator & Logistics", "Location Scouting", "Talent Casting", "Crew Sourcing"]} subtitle={'The characters are introduced'} />
+					<Dropdown number={'03'} title={'Production'} list={["Scalable Service Production", "Award Winning Directors & Producers", "In-house cinema Gear", "On-set Culture of Collaboration", "Studio Space & Rentals"]} subtitle={'The main story hook'} />
+					<Dropdown number={'04'} title={'Post-Production'} list={["Editing", "Motions Graphics & Animation", "Sound Design", "Color Grading", "Multi-Platform Masterting & Delivery"]} subtitle={'The climax'} />
 				</div>
 
 			</div>

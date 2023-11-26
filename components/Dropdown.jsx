@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
 
-const Dropdown = ({ number, heading, desc, }) => {
+const Dropdown = ({ number, title, subtitle, list = [] }) => {
   const [isOpen, setIsOpen] = useState(false)
   const control = useAnimation()
   const [ref, inView] = useInView()
@@ -35,8 +35,8 @@ const Dropdown = ({ number, heading, desc, }) => {
       <div className=' w-full h-max bg-white/10 rounded-lg px-4 py-3 transition-all'>
         <button className='w-full flex items-center justify-between' onClick={() => setIsOpen((prev) => !prev)}>
           <div className='flex flex-col justify-start items-start'>
-            <h1 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-xl font-semibold text-white ' + syne.className}>{heading}</h1>
-            <p className={'text-left relative top-0 left-0 lg:text-base text-sm transition-all ease-in-expo duration-700 font-semibold text-white ' + syne.className}>{desc}</p>
+            <h1 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-xl font-semibold text-white ' + syne.className}>{title}</h1>
+            <p className={'text-left relative top-0 left-0 lg:text-base text-sm transition-all ease-in-expo duration-700 font-semibold text-white ' + syne.className}>{subtitle}</p>
           </div>
           {
             !isOpen ? (<BsArrowDown className='lg:text-2xl text-xl' />) : (<BsArrowUp className='lg:text-2xl text-xl' />)
@@ -44,9 +44,11 @@ const Dropdown = ({ number, heading, desc, }) => {
         </button>
         {isOpen && (
           <div className='p-3 mt-3 bg-white/20  rounded-lg' >
-            <p>Creative Development</p>
-            <p>Script Writing</p>
-            <p>Storyboarding and Pre-Visuals</p>
+            {
+              list.map((item) => {
+                return <p>{item}</p>
+              })
+            }
           </div>
         )}
       </div>
