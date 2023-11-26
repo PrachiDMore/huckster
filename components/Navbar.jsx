@@ -41,12 +41,12 @@ const Navbar = () => {
           borderRadius: "40px",
         },
         visible: {
-          height: "220px",
+          height: "260px",
           borderRadius: "20px",
           flexDirection: "column",
           backdropFilter: "blur(40px)",
         }
-      }} initial="hidden" animate={control} className='w-11/12 px-8 py-4 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
+      }} initial="hidden" animate={control} className='w-8/12 px-8 py-4 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
         <div className='w-full flex justify-between items-center'>
           <Link href={'/'}>
             <img className='lg:w-36 w-20' src="/assets/HucksterLogo.png" alt="" />
@@ -64,7 +64,7 @@ const Navbar = () => {
           }} className='block text-white'><HiOutlineMenuAlt3/></div>
         </div>
         <div className='mt-5 items-center flex flex-col gap-4'>
-          {/* <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Home</Link></motion.span> */}
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Home</Link></motion.span>
           <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/aboutus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/aboutus'}>WE (About Us)</Link></motion.span>
           <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/work" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/work'}>CREATE (Our Work)</Link></motion.span>
           {/* <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Our Services</Link></motion.span> */}
