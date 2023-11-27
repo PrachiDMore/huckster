@@ -6,6 +6,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import { motion, useAnimation } from 'framer-motion';
+import { RxCross2 } from "react-icons/rx";
 
 const syne = Syne({ subsets: ['latin'] })
 
@@ -30,8 +31,6 @@ const Navbar = () => {
   }
   return (
     <div className={'w-screen flex justify-center ' + syne.className}>
-      {/* DESKTOP */}
-
       {/* MOBILE */}
       <motion.div transition={{
         ease: "easeInOut",
@@ -46,10 +45,10 @@ const Navbar = () => {
           flexDirection: "column",
           backdropFilter: "blur(40px)",
         }
-      }} initial="hidden" animate={control} className='lg:w-8/12 w-11/12 px-12 py-4 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
+      }} initial="hidden" animate={control} className='lg:w-8/12 w-11/12 lg:px-12 px-7 lg:py-4 py-6 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
         <div className='w-full flex justify-between items-center'>
           <Link href={'/'}>
-            <img className='lg:w-36 w-20' src="/assets/HucksterLogo.png" alt="" />
+            <img className='lg:w-36 w-24' src="/assets/HucksterLogo.png" alt="" />
           </Link>
           <div onClick={() => {
             if (show) {
@@ -61,7 +60,7 @@ const Navbar = () => {
               linkcontrol.start("visible")
               setShow(true)
             }
-          }} className='block text-white'><HiOutlineMenuAlt3/></div>
+          }} className='text-white'>{!show ? <HiOutlineMenuAlt3 className='text-2xl' /> : <RxCross2  className='text-2xl'/>}</div>
         </div>
         <div className='mt-5 items-center flex flex-col gap-4'>
           {/* <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Home</Link></motion.span> */}

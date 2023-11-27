@@ -42,10 +42,10 @@ export default function Home() {
 				<Image className={index === 2 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/DS_NEWSBLAST_GIF03_larger.gif" alt="" />
 				<Image className={index === 3 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/TIC_GIF_02_A24.gif" alt="" />
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
-				<div className={'gap-3 flex flex-col justify-end py-14 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
+				<div className={'gap-3 flex flex-col justify-end lg:py-14 py-20 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
 					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>BFL</h1></SlideReveal>
 					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>FUH</h1></SlideReveal>
-					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>WAHL</h1></SlideReveal>
+					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>WAHL MEA</h1></SlideReveal>
 					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Outlet Price</h1></SlideReveal>
 				</div>
 			</section>
@@ -67,28 +67,24 @@ export default function Home() {
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-between from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
 								<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
 							</div>
 						</Link>
 						<div className='group/creation lg:col-span-4 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-between from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-							<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+							<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='group/creation lg:col-span-4 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-between from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-							<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+							<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='group/creation lg:col-span-8 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-between from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-							<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+							<h2 className={'gradientText delay-75  relative top-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:top-4 group-hover/creation:top-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 					</div>
@@ -97,36 +93,32 @@ export default function Home() {
 			</div>
 
 			{/* mobile view creation */}
-			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 grid lg:hidden lg:gap-16 gap-5'>
+			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 grid lg:hidden lg:gap-16 gap-6'>
 				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
 						<div className='cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-t flex flex-col justify-between from-black/80 via-black/10 to-black/30  absolute top-0 left-0'>
-								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-1 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-t flex flex-col justify-between from-black/80 via-black/10 to-black/30  absolute top-0 left-0'>
-								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-1 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-t flex flex-col justify-between from-black/80 via-black/10 to-black/30  absolute top-0 left-0'>
-								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-1 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-t flex flex-col justify-between from-black/80 via-black/10 to-black/30  absolute top-0 left-0'>
-								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>Corporate Videos</h2>
-								{/* <p className={'delay-75 relative bottom-0 left-0 opacity-1 transition-all ease-in-expo duration-700 font-normal text-white ' + syne.className}>While we all continue the celebration of the successful #fifaworldcup2022qatar  campaign, we had the opportunity to work with WAHL MiddleEast to develop and visualize this aspirational content.</p> */}
+								<h2 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 					</div>
@@ -142,9 +134,9 @@ export default function Home() {
 				</div>
 				<div className='absolute lg:top-10 top-14'>
 					<div className='w-full lg:px-28 px-5 lg:py-14 py-7 grid gap-40'>
-						<p className='lg:text-7xl text-3xl font-medium'>Let's redefine what's possible.</p>
+						<p className='lg:text-7xl text-2xl font-medium'>Let's redefine what's possible.</p>
 					</div>
-					<div className={'w-full lg:px-28 px-5  grid ' + syne.className}>
+					<div className={'w-full lg:px-28 px-5  grid lg:gap-0 gap-4 ' + syne.className}>
 						<Reveal delay={0}>
 							<p style={{
 								WebkitTextStroke: "1px white"
@@ -166,14 +158,14 @@ export default function Home() {
 
 
 			{/* services */}
-			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 grid gap-7 relative min-h-screen'>
+			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 grid lg:gap-7 gap-0 relative '>
 				<img src="/assets/bg-lines.svg" className='w-full h-full absolute top-0 left-0 object-cover object-center' alt="" />
 				<div className='flex justify-center gap-1 w-full'>
-					<h1 className={'text-center lg:text-4xl text-3xl font-semibold mb-3 ' + syne.className}>Services: Cause we like to get straight to the point</h1>
+					<h1 className={'text-center lg:text-4xl text-3xl font-semibold lg:mb-5 mb-10 ' + syne.className}>Services: Cause we like to get straight to the point</h1>
 					{/* <p className='lg:text-4xl text-lg font-medium'>Cause we like to get straight to the point</p> */}
 				</div>
 
-				<div className={'w-full flex flex-col items-center lg:gap-10 gap-16 ' + syne.className}>
+				<div className={'w-full flex flex-col items-center lg:gap-10 gap-10 ' + syne.className}>
 					{/* <div className='relative lg:w-8/12 w-[85%] h-max mt-20'>
 						<h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-10 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>01</h1>
 						<h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Design</h2>
