@@ -46,7 +46,7 @@ const aboutus = () => {
           <TeamCard />
           <TeamCard />
         </div>
-        <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:block lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY becomes<br /> the norm!</p>
+        <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY becomes<br /> the norm!</p>
         <p className={'hidden mx-auto lg:p-12 py-7 w-full lg:block lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY becomes the norm!</p>
       </div>
 
