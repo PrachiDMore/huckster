@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout'
 import React from 'react'
 import { Inter, Syne } from 'next/font/google'
-import Video from '@/components/video'
+import Video from '@/components/Video'
 import videojs from 'video.js'
 import Reveal from '@/components/Reveal'
 import Link from 'next/link'
