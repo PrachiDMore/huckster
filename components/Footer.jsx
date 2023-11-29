@@ -41,7 +41,7 @@ const Footer = () => {
             <h1 className={'text-xl font-semibold pb-5 ' + syne.className}>Keep Exploring</h1>
             <Link href={'/'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Home</Link>
             <Link href={'/work'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Our Work</Link>
-            <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Media</p>
+            <Link href={'/media'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Media</Link>
             <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Download portfolio</p>
             <p className='font-medium text-white/50 hover:text-white/70 duration-200'>Career</p>
             <Link href={'/contactus'} className='font-medium text-white/50 hover:text-white/70 duration-200'>Contact Us</Link>
