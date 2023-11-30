@@ -11,7 +11,7 @@ const syne = Syne({ subsets: ['latin'] })
 const contactus = () => {
   return (
     <Layout>
-      <HeroSection img={"https://framerusercontent.com/images/KihLgob1Ul5Qa1HTTyAzAljcyI.jpg"} heading={'Contact Us'} para={"We love hearing from you! Whether you're ready to discuss your next project, have a question, or just want to say hello, we're all ears. Our team is here to make your experience exceptional. Drop us a message, and let's start a conversation."} />
+      <HeroSection img={"https://framerusercontent.com/images/KihLgob1Ul5Qa1HTTyAzAljcyI.jpg"} heading={'Contact Us'} />
       <div className='w-screen lg:px-28 px-5 lg:py-20 py-10'>
         <div className='border border-white/50 rounded-2xl lg:flex grid gap-7 lg:p-8 p-4 bg-white/10'>
           <div className='lg:w-2/5 w-full'>

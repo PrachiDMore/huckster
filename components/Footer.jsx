@@ -12,7 +12,7 @@ const syne = Syne({ subsets: ['latin'] })
 const Footer = () => {
   return (
     <div className={'w-full border-white/70 border-t-[1px] ' + inter.className}>
-      <div className='w-screen h-1/2 lg:px-28 px-5 lg:py-16 py-5 flex flex-col lg:gap-8 gap-5 bg-black  text-white'>
+      <div className='w-screen h-1/2 lg:px-28 px-5 lg:pt-11 lg:pb-7 py-5 flex flex-col lg:gap-7 gap-5 bg-black  text-white'>
         <div className='flex lg:justify-between justify-center lg:flex-row flex-col lg:gap-0 gap-6'>
           <div className='lg:w-1/6 w-full '>
             <img className='w-36 lg:pt-0 pt-2' src="/assets/HucksterLogo.png" alt="" />

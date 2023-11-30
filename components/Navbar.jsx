@@ -45,10 +45,10 @@ const Navbar = () => {
           flexDirection: "column",
           backdropFilter: "blur(40px)",
         }
-      }} initial="hidden" animate={control} className='lg:w-8/12 w-11/12 lg:px-12 px-7 lg:py-4 py-6 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
+      }} initial="hidden" animate={control} className='w-full lg:px-28 px-5  lg:py-4 py-6 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
         <div className='w-full flex justify-between items-center'>
           <Link href={'/'}>
-            <img className='lg:w-36 w-24' src="/assets/HucksterLogo.png" alt="" />
+            <img className='lg:w-44 w-24' src="/assets/HucksterLogo.png" alt="" />
           </Link>
           <div onClick={() => {
             if (show) {
@@ -63,12 +63,9 @@ const Navbar = () => {
           }} className='text-white'>{!show ? <HiOutlineMenuAlt3 className='text-2xl' /> : <RxCross2  className='text-2xl'/>}</div>
         </div>
         <div className='mt-5 items-center flex flex-col gap-4'>
-          {/* <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Home</Link></motion.span> */}
-          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/aboutus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/aboutus'}>WE (About Us)</Link></motion.span>
-          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/work" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/work'}>CREATE (Our Work)</Link></motion.span>
-          {/* <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Our Services</Link></motion.span> */}
-          {/* <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/'}>Media Blogs</Link></motion.span> */}
-          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/contactus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/contactus'}>FOR (Contact Us)</Link></motion.span>
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/aboutus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/contactus'}>WE</Link></motion.span>
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/work" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/work'}>CREATE</Link></motion.span>
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/contactus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full' } href={'/aboutus'} >FOR YOU</Link></motion.span>
         </div>
       </motion.div>
     </div>
