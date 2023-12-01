@@ -158,7 +158,7 @@ export default function Home() {
 
 
 			{/* services */}
-			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 grid lg:gap-12 gap-0 relative '>
+			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col items-end lg:gap-12 gap-0 relative '>
 				<div className='flex flex-col justify-center gap-1 w-full'>
 					<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>SERVICES</h1></Reveal>
 					<p className={'lg:text-2xl text-lg font-medium ' + inter.className}>'Cause we like to get straight to the point</p>
@@ -174,12 +174,12 @@ export default function Home() {
 			</div>
 
 			{/* production partener */}
-			<div className='w-full lg:py-20 py-10 lg:px-28 px-5'>
+			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col justify-center items-center'>
 				<p className={'lg:text-7xl text-2xl font-semibold text-center ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 
-				<div className='lg:mt-20 mt-10 w-full'>
-					<Swiper
-						className='m-auto'
+				<div className='lg:mt-20 mt-10 w-full '>
+					{/* <Swiper
+						className='m-auto '
 						grabCursor={true}
 						loop={true}
 						breakpoints={breakpoints}
@@ -190,12 +190,29 @@ export default function Home() {
 							delay: 2000
 						}}
 					>
-						<SwiperSlide className='p-6 h-20 w-48 flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 h-20 w-48 flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 h-20 w-48  flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='p-6 mx-5 h-20 w-48 bg-white/20 border border-white/40 rounded-lg flex justify-center items-center'><img className='h-full w-full' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='p-6 mx-5 h-20 w-48 bg-white/20 border border-white/40 rounded-lg flex justify-center items-center'><img className='h-full w-full' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='p-6 mx-5 h-20 w-48 bg-white/20 border border-white/40 rounded-lg  flex justify-center items-center'><img className='h-full w-full' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
 						<SwiperSlide className='p-6 h-20 w-48  flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 h-20 w-48  flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide>
-					</Swiper>
+						<SwiperSlide className='p-6 h-20 w-48  flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide> 
+					</Swiper> */}
+
+					<Swiper className='m-auto w-full h-full'
+          grabCursor={true}
+          loop={true}
+          breakpoints={breakpoints}
+          // spaceBetween={50}
+          slidesPerView={4}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 2000
+          }}
+        >
+          <SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+          <SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+          <SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+          {/* <SwiperSlide className='rounded-3xl mx-5 overflow-hidden h-64 flex justify-center items-center'><img className='h-full w-full' src="https://assets-global.website-files.com/633c3f6cb573b7ca538e9ffa/639b7937d471181c6ad7b432_WestJet_Christmas%20Miracle.00_02_32_03.Still021-p-1080.jpg" alt="" /></SwiperSlide> */}
+        </Swiper>
 				</div>
 			</div>
 
