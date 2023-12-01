@@ -36,16 +36,16 @@ const Navbar = () => {
         ease: "easeInOut",
       }} variants={{
         hidden: {
-          height: "75px",
+          height: "85px",
           borderRadius: "40px",
         },
         visible: {
-          height: "220px",
+          height: "700px",
           borderRadius: "20px",
           flexDirection: "column",
           backdropFilter: "blur(40px)",
         }
-      }} initial="hidden" animate={control} className='w-full lg:px-28 px-5  lg:py-4 py-6 flex flex-col fixed top-5 z-50 bg-gradient-to-b from-transparent to-black/50 backdrop-blur-md'>
+      }} initial="hidden" animate={control} className='w-screen lg:px-28 px-5 lg:py-6 py-6 flex flex-col  fixed z-50 '>
         <div className='w-full flex justify-between items-center'>
           <Link href={'/'}>
             <img className='lg:w-44 w-24' src="/assets/HucksterLogo.png" alt="" />
@@ -60,12 +60,12 @@ const Navbar = () => {
               linkcontrol.start("visible")
               setShow(true)
             }
-          }} className='text-white'>{!show ? <HiOutlineMenuAlt3 className='text-2xl' /> : <RxCross2  className='text-2xl'/>}</div>
+          }} className='text-white flex gap-10 items-center'> <p className='text-xl'>We're just a call away! </p> {!show ? <HiOutlineMenuAlt3 className='text-2xl hover:cursor-pointer' /> : <RxCross2  className='text-2xl hover:cursor-pointer'/>}</div>
         </div>
-        <div className='mt-5 items-center flex flex-col gap-4'>
-          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/aboutus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/contactus'}>WE</Link></motion.span>
-          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/work" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/work'}>CREATE</Link></motion.span>
-          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/contactus" ? 'text-blue-500 duration-200 px-3 py-2 rounded-full' : 'text-white/70 hover:text-white duration-200 px-3 py-2 rounded-full' } href={'/aboutus'} >FOR YOU</Link></motion.span>
+        <div className='mt-16 items-start flex flex-col gap-4'>
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/contactus" ? 'text-blue-500 lg:text-9xl text-xl  duration-200 px-3 py-2 rounded-full' : 'text-white/70 lg:text-9xl text-xl  hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/contactus'}>WE</Link></motion.span>
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/work" ? 'text-blue-500 lg:text-9xl text-xl  duration-200 px-3 py-2 rounded-full' : 'text-white/70 lg:text-9xl text-xl  hover:text-white duration-200 px-3 py-2 rounded-full'} href={'/work'}>CREATE</Link></motion.span>
+          <motion.span variants={linkvariant} initial="hidden" animate={linkcontrol}><Link className={router.pathname === "/aboutus" ? 'text-blue-500 lg:text-9xl text-xl  duration-200 px-3 py-2 rounded-full' : 'text-white/70 lg:text-9xl text-xl  hover:text-white duration-200 px-3 py-2 rounded-full' } href={'/aboutus'} >FOR YOU</Link></motion.span>
         </div>
       </motion.div>
     </div>
