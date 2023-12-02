@@ -38,6 +38,8 @@ const Navbar = () => {
         hidden: {
           height: "85px",
           borderRadius: "40px",
+          pointerEvents: "none",
+          zIndex: "0px"
         },
         visible: {
           height: "700px",
