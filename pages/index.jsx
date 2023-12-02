@@ -20,7 +20,7 @@ export default function Home() {
 	const [index, setIndex] = useState(0)
 	const breakpoints = {
 		1024: {
-			slidesPerView: 4,
+			slidesPerView: 3,
 		},
 		768: {
 			slidesPerView: 3,
@@ -72,19 +72,19 @@ export default function Home() {
 						<div className='group/creation lg:col-span-4 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-end from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-							<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
+								<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='group/creation lg:col-span-4 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-end from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-							<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
+								<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 						<div className='group/creation lg:col-span-8 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-end from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-							<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
+								<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
 							</div>
 						</div>
 					</div>
@@ -164,7 +164,7 @@ export default function Home() {
 					<p className={'lg:text-2xl text-lg font-medium ' + inter.className}>'Cause we like to get straight to the point</p>
 				</div>
 
-				<div className={'w-9/12 flex flex-col items-end justify-end lg:gap-10 gap-10 ' + syne.className}>
+				<div className={'lg:w-9/12 w-full flex flex-col items-end justify-end lg:gap-10 gap-10 ' + syne.className}>
 					<Dropdown number={'01'} title={'Design'} list={["Creative Development", "Script Writing", "Storyboarding and Pre-Visuals"]} subtitle={'The story begins'} />
 					<Dropdown number={'02'} title={'Pre-Production'} list={["Project Management", "Administrator & Logistics", "Location Scouting", "Talent Casting", "Crew Sourcing"]} subtitle={'The characters are introduced'} />
 					<Dropdown number={'03'} title={'Production'} list={["Scalable Service Production", "Award Winning Directors & Producers", "In-house cinema Gear", "On-set Culture of Collaboration", "Studio Space & Rentals"]} subtitle={'The main story hook'} />
@@ -198,21 +198,20 @@ export default function Home() {
 					</Swiper> */}
 
 					<Swiper className='m-auto w-full h-full'
-          grabCursor={true}
-          loop={true}
-          breakpoints={breakpoints}
-          // spaceBetween={50}
-          slidesPerView={4}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 2000
-          }}
-        >
-          <SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-          <SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-          <SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-          {/* <SwiperSlide className='rounded-3xl mx-5 overflow-hidden h-64 flex justify-center items-center'><img className='h-full w-full' src="https://assets-global.website-files.com/633c3f6cb573b7ca538e9ffa/639b7937d471181c6ad7b432_WestJet_Christmas%20Miracle.00_02_32_03.Still021-p-1080.jpg" alt="" /></SwiperSlide> */}
-        </Swiper>
+						grabCursor={true}
+						loop={true}
+						breakpoints={breakpoints}
+						// spaceBetween={50}
+						slidesPerView={3}
+						modules={[Autoplay]}
+						autoplay={{
+							delay: 2000
+						}}
+					>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+					</Swiper>
 				</div>
 			</div>
 
