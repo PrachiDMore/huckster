@@ -1,54 +1,73 @@
-// import React from 'react'
-// import videojs from 'video.js';
-// import 'video.js/dist/video-js.css';
+import { useState, useRef } from "react";
 
-// const Video = () => {
-//   const videoRef = React.useRef(null);
-//   const playerRef = React.useRef(null);
-//   const { options, onReady } = props;
+const VideoPlayer = ({ src }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.5);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
-//   React.useEffect(() => {
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
 
-//     // Make sure Video.js player is only initialized once
-//     if (!playerRef.current) {
-//       // The Video.js player needs to be _inside_ the component el for React 18 Strict Mode. 
-//       const videoElement = document.createElement("video-js");
+  const toggleFullScreen = () => {
+    const video = videoRef.current;
+    if (!isFullScreen) {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+      setIsFullScreen(true);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+      setIsFullScreen(false);
+    }
+  };
 
-//       videoElement.classList.add('vjs-big-play-centered');
-//       videoRef.current.appendChild(videoElement);
+  const handleVolumeChange = (e) => {
+    const video = videoRef.current;
+    const volumeValue = e.target.value;
+    video.volume = volumeValue;
+    setVolume(volumeValue);
+  };
 
-//       const player = playerRef.current = videojs(videoElement, options, () => {
-//         videojs.log('player is ready');
-//         onReady && onReady(player);
-//       });
+  return (
+    <div className="relative">
+      <video ref={videoRef} src={src} className="w-full" controls></video>
+      <div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-2 px-4 flex items-center justify-between">
+        <button onClick={togglePlay} className="text-white">
+          {isPlaying ? "Pause" : "Play"}
+        </button>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={volume}
+          onChange={handleVolumeChange}
+        />
+        <button onClick={toggleFullScreen} className="text-white">
+          {isFullScreen ? "Exit Fullscreen" : "Fullscreen"}
+        </button>
+      </div>
+    </div>
+  );
+};
 
-//       // You could update an existing player in the `else` block here
-//       // on prop change, for example:
-//     } else {
-//       const player = playerRef.current;
-
-//       player.autoplay(options.autoplay);
-//       player.src(options.sources);
-//     }
-//   }, [options, videoRef]);
-
-//   // Dispose the Video.js player when the functional component unmounts
-//   React.useEffect(() => {
-//     const player = playerRef.current;
-
-//     return () => {
-//       if (player && !player.isDisposed()) {
-//         player.dispose();
-//         playerRef.current = null;
-//       }
-//     };
-//   }, [playerRef]);
-
-//   return (
-//     <div data-vjs-player>
-//       <div ref={videoRef} />
-//     </div>
-//   );
-// }
-
-// export default Video
+export default VideoPlayer;
