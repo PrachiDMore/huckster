@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  /* cursor: none !important; */
+}
+*{
+  /* cursor: none !important; */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.banner-height {
+  height: calc(100vh - 112px);
+}
+
+.gradientText {
+  background-image: linear-gradient(132deg, white, rgba(255, 255, 255, 0.4));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: max-content;
+}
+
+/* 
+.bg-gradient-test {
+  backdrop-filter: blur(10px);
+}
+
+.snapscroll {
+  min-height: 100%;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(0px);
+  scroll-snap-type: y mandatory;
+} */
+
+.slide-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  transform-origin: bottom;
+  z-index: 20000;
+}
+
+.slide-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  transform-origin: top;
+  z-index: 20000;
+}
+
+.cursor-dot {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  z-index: 56;
+  transition: 50ms;
+}
+
+.cursor-outline {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.711);
+  backdrop-filter: blur(5px);
+  z-index: 55;
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+Link{
+  outline: none;
+}
+
+a{
+  outline: none !important;
+}
+
+.animate-scroll{
+  height: 2px;
+  width: 150px;
+  animation: scrollanimate 2s infinite cubic-bezier(0.22, 1, 0.36, 1); 
+}
+
+@keyframes scrollanimate {
+  0%{
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100%{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
