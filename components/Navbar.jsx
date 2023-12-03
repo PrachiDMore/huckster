@@ -57,27 +57,27 @@ const Navbar = () => {
               alt=""
             />
           </Link>
-          <div
-            onClick={() => {
-              if (show) {
-                control.start("hidden");
-                linkcontrol.start("hidden");
-                setShow(false);
-              } else {
-                control.start("visible");
-                linkcontrol.start("visible");
-                setShow(true);
-              }
-            }}
-            className="text-white flex gap-10 items-center"
-          >
-            {" "}
-            <p className="lg:block hidden text-xl">We're just a call away! </p>{" "}
-            {!show ? (
-              <HiOutlineMenuAlt3 className="text-2xl hover:cursor-pointer" />
-            ) : (
-              <RxCross2 className="text-2xl hover:cursor-pointer" />
-            )}
+          <div className="flex gap-10">
+            <Link href={"/contactus"} className="lg:block hidden text-xl">We're just a call away! </Link>{" "}
+            <div onClick={() => {
+                if (show) {
+                  control.start("hidden");
+                  linkcontrol.start("hidden");
+                  setShow(false);
+                } else {
+                  control.start("visible");
+                  linkcontrol.start("visible");
+                  setShow(true);
+                }
+              }} className="text-white flex gap-10 items-center" >
+              {" "}
+            
+              {!show ? (
+                <HiOutlineMenuAlt3 className="text-2xl hover:cursor-pointer" />
+              ) : (
+                <RxCross2 className="text-2xl hover:cursor-pointer" />
+              )}
+            </div>
           </div>
         </div>
         <div className="flex flex-col h-full lg:justify-end justify-center">

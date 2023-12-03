@@ -1,10 +1,10 @@
 import React from 'react'
-import { Syne } from 'next/font/google'
+import { Inter, Syne } from 'next/font/google'
 import { motion, useAnimation } from 'framer-motion';
 import Reveal from './Reveal';
 
 const syne = Syne({ subsets: ['latin'] })
-
+const inter = Inter({ subsets: ['latin'] })
 
 const TeamCard = () => {
   const control = useAnimation();
@@ -18,7 +18,7 @@ const TeamCard = () => {
         }}
         variants={{
           hidden: {
-            top: "-332px",
+            top: "-333px",
             position: "absolute",
           },
           visible: {
@@ -26,8 +26,23 @@ const TeamCard = () => {
             position: "absolute",
             animationDelay: "900ms"
           }
-        }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-332px] h-[332px] w-full bg-white text-black z-[100]'>
-        <Reveal>asdasdjgashd gadk adasdna dhajsdhaskjdhkj</Reveal>
+        }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-333px] h-[333px] w-full bg-black/30 backdrop-blur-lg z-[100]'>
+        <Reveal>
+          <div className='flex flex-col items-start p-3 py-2'>
+            <p className={'text-start text-sm pb-2 ' + inter.className}>Meet our Versatile visionary, a Filmmaker and Latex Harvest technician. He spearheads @citizen.hippie productions. </p>
+            <h1 className={'font-bold ' + syne.className}>Roles and Films:</h1>
+            <ul  className={'flex flex-col items-start text-sm text-start pb-2 ' + inter.className}>
+              <li>Camera & Electrical, Costume Designer - 'Not Born Heroes' (2010)</li>
+              <li>Producer - 'Peacock' (2008)</li>
+              <li>Writer & Director - 'Kalki' (2019)</li>
+              <li>Writer & Director - 'Ula' (Current Project)</li>
+              <li>Screenplay - 'Gandharva Jr.' (Upcoming)</li>
+              <li>Assistant Director - 'Theevandi' (2018)</li>
+              <li>Assistant Director - 'Second Show' (2012)</li>
+              <li>Assistant Director - 'Little Miss Rawther' (2023)</li>
+            </ul>
+          </div>
+        </Reveal>
       </motion.div>
       <img className='rounded-lg hover:grayscale w-full h-80 object-cover transition duration-500' src="/assets/team.webp" alt="" />
       <h1 className={'text-xl pt-3 ' + syne.className}>Praveen Prabhakaram</h1>
