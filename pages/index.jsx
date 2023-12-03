@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion';
 import Reveal from '@/components/Reveal'
 import SlideReveal from '@/components/SlideReveal'
+import CreationCard from '@/components/CreationCard'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -63,12 +64,7 @@ export default function Home() {
 				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
-						<Link href={'/creation'} className='group/creation lg:col-span-8 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
-							<img className='object-center h-full w-full object-cover' src='https://d135u4jtzauizi.cloudfront.net/DS_NEWSBLAST_GIF03_larger.gif' />
-							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-end from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
-								<h2 className={'gradientText delay-75  relative bottom-0 left-0 lg:group-hover/creation:left-4 group-hover/creation:left-2 lg:group-hover/creation:bottom-3 group-hover/creation:bottom-2 opacity-0 group-hover/creation:opacity-100 transition-all ease-in-expo duration-700 lg:text-3xl text-xl font-semibold text-white ' + syne.className}>WAHL MEA</h2>
-							</div>
-						</Link>
+						<CreationCard />
 						<div className='group/creation lg:col-span-4 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://framerusercontent.com/images/8B7sYF56wceOr6bVtMHU3R29WvM.jpg' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-end from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
