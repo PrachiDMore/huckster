@@ -28,7 +28,7 @@ const TeamCard = ({value}) => {
           }
         }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-333px] h-[333px] w-full bg-black/30 backdrop-blur-lg z-[100]'>
         <Reveal>
-          <div className='flex flex-col items-start p-3 py-2'>
+          <div className='flex flex-col items-start p-4'>
             <p className={'text-start text-sm pb-2 ' + inter.className}>{value?.description} </p>
             {/* <h1 className={'font-bold ' + syne.className}>Roles and Films:</h1>
             <ul  className={'flex flex-col items-start text-sm text-start pb-2 ' + inter.className}>

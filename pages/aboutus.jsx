@@ -72,7 +72,7 @@ axios("https://huckster-backend.vercel.app/get-team", {
 						grabCursor={true}
 						loop={true}
 						breakpoints={breakpoints}
-						spaceBetween={50}
+						spaceBetween={20}
 						slidesPerView={3}
 						modules={[Autoplay]}
 						autoplay={{
@@ -83,6 +83,8 @@ axios("https://huckster-backend.vercel.app/get-team", {
              return <SwiperSlide className=''><TeamCard value={value}/></SwiperSlide>
            } ) }
 					</Swiper>
+
+
         {/* <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
           
           <TeamCard />

@@ -21,7 +21,7 @@ export default function Home() {
 	const [index, setIndex] = useState(0)
 	const breakpoints = {
 		1024: {
-			slidesPerView: 3,
+			slidesPerView: 4,
 		},
 		768: {
 			slidesPerView: 3,
@@ -183,15 +183,21 @@ export default function Home() {
 						loop={true}
 						breakpoints={breakpoints}
 						// spaceBetween={50}
-						slidesPerView={3}
+						slidesPerView={4}
 						modules={[Autoplay]}
 						autoplay={{
 							delay: 2000
 						}}
 					>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-cover' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
 					</Swiper>
 				</div>
 			</div>
