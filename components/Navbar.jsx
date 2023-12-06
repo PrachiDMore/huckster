@@ -47,7 +47,7 @@ const Navbar = () => {
         }}
         initial="hidden"
         animate={control}
-        className="w-screen lg:px-28 px-5 lg:py-6 py-6 flex flex-col  fixed z-[5000] "
+        className="w-screen lg:px-28 px-5 lg:py-6 py-6 flex flex-col mix-blend-difference fixed z-[5000] "
       >
         <div className="w-full flex justify-between items-center">
           <Link href={"/"}>
@@ -90,8 +90,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/contactus"
-                    ? "text-blue-500 lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-white duration-200 px-3 py-2 rounded-full"
+                    ? "text-[#D5715A] lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "gradientText w-max lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/contactus"}
               >
@@ -106,8 +106,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/work"
-                    ? "text-blue-500 lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold  hover:text-white duration-200 px-3 py-2 rounded-full"
+                    ? "text-[#D5715A] lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
+                    : "gradientText w-max lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/work"}
               >
@@ -122,8 +122,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/aboutus"
-                    ? "text-blue-500 lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold  hover:text-white duration-200 px-3 py-2 rounded-full"
+                    ? "text-[#D5715A] lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
+                    : "gradientText w-max lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/aboutus"}
               >

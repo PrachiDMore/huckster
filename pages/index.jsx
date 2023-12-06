@@ -22,15 +22,19 @@ export default function Home() {
 	const breakpoints = {
 		1024: {
 			slidesPerView: 4,
+			spaceBetween: 50
 		},
 		768: {
 			slidesPerView: 3,
+			spaceBetween: 50
 		},
 		648: {
 			slidesPerView: 2,
+			spaceBetween: 50
 		},
 		320: {
 			slidesPerView: 1,
+			spaceBetween: 0
 		},
 	}
 
@@ -53,7 +57,7 @@ export default function Home() {
 
 			<Reveal>
 				<div className='w-full lg:py-14 py-10 lg:px-28 px-5'>
-					<p className='lg:text-5xl text-2xl font-medium w-full text-center'>
+					<p className={'lg:text-5xl text-2xl font-medium w-full text-center  ' + syne.className}>
 						At the house of Huckster, <br />we create magic that captivates <br />and transcends the solitary emotions.
 					</p>
 				</div>
@@ -61,7 +65,7 @@ export default function Home() {
 
 			{/* desktop view creation */}
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 lg:grid hidden lg:gap-16 gap-5'>
-				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>CREATIONS</h1></Reveal>
+				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
 						<CreationCard className={"lg:col-span-8"}/>
@@ -75,7 +79,7 @@ export default function Home() {
 
 			{/* mobile view creation */}
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 grid lg:hidden lg:gap-16 gap-6'>
-				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>CREATIONS</h1></Reveal>
+				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
 						<div className='cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
@@ -115,7 +119,7 @@ export default function Home() {
 				</div>
 				<div className='absolute lg:top-10 top-14'>
 					<div className='w-full lg:px-28 px-5 lg:py-14 py-7 grid gap-40'>
-						<p className='lg:text-7xl text-2xl font-medium'>Let's redefine what's possible.</p>
+						<p className={'lg:text-7xl text-2xl font-medium ' + syne.className}>Let's redefine what's possible.</p>
 					</div>
 					<div className={'w-full lg:px-28 px-5  grid lg:gap-0 gap-4 ' + syne.className}>
 						<Reveal delay={0}>
@@ -141,8 +145,8 @@ export default function Home() {
 			{/* services */}
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col items-end lg:gap-12 gap-0 relative '>
 				<div className='flex flex-col justify-center gap-1 w-full'>
-					<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>SERVICES</h1></Reveal>
-					<p className={'lg:text-2xl text-lg font-medium ' + inter.className}>'Cause we like to get straight to the point</p>
+					<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>SERVICES</h1></Reveal>
+					<p className={'lg:text-2xl text-lg font-medium ' + syne.className}>'Cause we like to get straight to the point</p>
 				</div>
 
 				<div className={'lg:w-9/12 w-full flex flex-col items-end justify-end lg:gap-10 gap-10 ' + syne.className}>
@@ -156,48 +160,28 @@ export default function Home() {
 
 			{/* production partener */}
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col justify-center items-center'>
-				<p className={'lg:text-7xl text-2xl font-semibold text-center ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
+				<p className={'lg:text-7xl text-2xl font-semibold text-center gradientText ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 
 				<div className='lg:mt-20 mt-10 w-full '>
-					{/* <Swiper
-						className='m-auto '
-						grabCursor={true}
-						loop={true}
-						breakpoints={breakpoints}
-						spaceBetween={0}
-						slidesPerView={4}
-						modules={[Autoplay]}
-						autoplay={{
-							delay: 2000
-						}}
-					>
-						<SwiperSlide className='p-6 mx-5 h-20 w-48 bg-white/20 border border-white/40 rounded-lg flex justify-center items-center'><img className='h-full w-full' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 mx-5 h-20 w-48 bg-white/20 border border-white/40 rounded-lg flex justify-center items-center'><img className='h-full w-full' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 mx-5 h-20 w-48 bg-white/20 border border-white/40 rounded-lg  flex justify-center items-center'><img className='h-full w-full' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 h-20 w-48  flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='p-6 h-20 w-48  flex justify-center items-center'><img className='h-full w-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="" /></SwiperSlide> 
-					</Swiper> */}
-
 					<Swiper className='m-auto w-full h-full'
 						grabCursor={true}
 						loop={true}
 						breakpoints={breakpoints}
-						// spaceBetween={50}
-						slidesPerView={4}
+						freeMode={true}
 						modules={[Autoplay]}
 						autoplay={{
 							delay: 2000
 						}}
 					>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 mx-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
 					</Swiper>
 				</div>
 			</div>
@@ -208,7 +192,7 @@ export default function Home() {
 				<img className='w-screen lg:h-screen ' src='/assets/foryou.jpg' />
 				<div className='w-screen lg:h-screen h-full bg-black/60 absolute top-0'></div>
 				<div className='w-screen lg:h-screen h-full flex justify-center items-center absolute top-0'>
-					<Link href={'/aboutus'} className={'lg:text-6xl text-3xl font-semibold text-white/70 hover:text-white duration-200 ' + syne.className}>For You</Link>
+					<Link href={'/aboutus'} className={' link lg:text-6xl text-3xl font-semibold text-white/70 hover:text-white duration-200 ' + syne.className}>For You</Link>
 				</div>
 			</div>
 
