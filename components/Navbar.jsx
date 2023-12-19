@@ -127,7 +127,7 @@ const Navbar = () => {
                 }
                 href={"/contactus"}
               >
-                FOR YOU
+                FOR  YOU
               </Link>
             </motion.span>
           </div>
