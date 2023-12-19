@@ -89,11 +89,11 @@ const Navbar = () => {
             >
               <Link
                 className={
-                  router.pathname === "/contactus"
+                  router.pathname === "/aboutus"
                     ? "text-blue-500 lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
                     : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-white duration-200 px-3 py-2 rounded-full"
                 }
-                href={"/contactus"}
+                href={"/aboutus"}
               >
                 WE
               </Link>
@@ -121,11 +121,11 @@ const Navbar = () => {
             >
               <Link
                 className={
-                  router.pathname === "/aboutus"
+                  router.pathname === "/contactus"
                     ? "text-blue-500 lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
                     : "text-white/70 lg:text-9xl text-5xl font-bold  hover:text-white duration-200 px-3 py-2 rounded-full"
                 }
-                href={"/aboutus"}
+                href={"/contactus"}
               >
                 FOR YOU
               </Link>
