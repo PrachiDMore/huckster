@@ -47,7 +47,7 @@ const Navbar = () => {
         }}
         initial="hidden"
         animate={control}
-        className="w-screen lg:px-28 px-5 lg:py-6 py-6 flex flex-col  fixed z-[5000] "
+        className="w-screen lg:px-28 px-5 lg:py-6 py-6 flex flex-col mix-blend-difference fixed z-[5000] "
       >
         <div className="w-full flex justify-between items-center">
           <Link href={"/"}>
@@ -57,27 +57,27 @@ const Navbar = () => {
               alt=""
             />
           </Link>
-          <div
-            onClick={() => {
-              if (show) {
-                control.start("hidden");
-                linkcontrol.start("hidden");
-                setShow(false);
-              } else {
-                control.start("visible");
-                linkcontrol.start("visible");
-                setShow(true);
-              }
-            }}
-            className="text-white flex gap-10 items-center"
-          >
-            {" "}
-            <p className="lg:block hidden text-xl">We're just a call away! </p>{" "}
-            {!show ? (
-              <HiOutlineMenuAlt3 className="text-2xl hover:cursor-pointer" />
-            ) : (
-              <RxCross2 className="text-2xl hover:cursor-pointer" />
-            )}
+          <div className="flex gap-10">
+            <Link href={"/contactus"} className="lg:block hidden text-xl">We're just a call away! </Link>{" "}
+            <div onClick={() => {
+                if (show) {
+                  control.start("hidden");
+                  linkcontrol.start("hidden");
+                  setShow(false);
+                } else {
+                  control.start("visible");
+                  linkcontrol.start("visible");
+                  setShow(true);
+                }
+              }} className="text-white flex gap-10 items-center" >
+              {" "}
+            
+              {!show ? (
+                <HiOutlineMenuAlt3 className="text-2xl hover:cursor-pointer" />
+              ) : (
+                <RxCross2 className="text-2xl hover:cursor-pointer" />
+              )}
+            </div>
           </div>
         </div>
         <div className="flex flex-col h-full lg:justify-end justify-center">
@@ -106,8 +106,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/work"
-                    ? "text-blue-500 lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold  hover:text-white duration-200 px-3 py-2 rounded-full"
+                    ? "text-[#D5715A] lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
+                    : "gradientText w-max lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/work"}
               >

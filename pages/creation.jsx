@@ -10,6 +10,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useState } from "react";
+import CreationCard from "@/components/CreationCard";
 const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"] });
 
@@ -85,45 +86,40 @@ const Creation = () => {
         <p className={'relative z-10 lg:text-3xl text-xl font-semibold w-full ' + inter.className}>by #hucksterproductions</p>
       </section> */}
 
-      <section className="w-screen h-screen my-5 mt-16 lg:px-28 px-5">
+      <section className="w-screen h-screen my-10 mt-20 lg:px-28 px-5">
         {/* <Video options={videoJsOptions} onReady={handlePlayerReady} /> */}
         {/* <VideoPlayer src={"/assets/demo.mp4"} /> */}
         <VideoPlayer src={"https://framerusercontent.com/assets/t3oWwHTiHPdqvISgXglF9dJecA.mp4"} />
       </section>
 
-      <section className="w-screen lg:py-20 py-10 lg:px-28 px-5 grid grid-cols-12">
-        <div className="col-span-4"></div>
-        <div className="col-span-8">
-          <p className={"text-4xl leading-snug " + syne.className}>
-            The content and the location injected a true spirit of team work and
-            consistency within us. Shot during the mid-summer, under the
-            45&#176;C! Shout out to everyone in this project GHG calculations
-            in-line!
-          </p>
-          <div
-            className={
-              "text-xl py-4 font-medium flex flex-col gap-2 " + syne.className
-            }
-          >
-            <p className="">Brand: @wahl_mea</p>
-            <p className="">Campaign: GROOMING ASPIRATIONS SINCE 1919</p>
-            <p className="">Video: @ARRIChannel </p>
-            <p className="">Year: 2022</p>
-            <p className="">Location: U.A.E.</p>
+      <Reveal>
+        <section className="w-screen lg:py-20 py-10 lg:px-28 px-5 grid grid-cols-12">
+          <div className="col-span-4"></div>
+          <div className="col-span-8">
+            <p className={"text-4xl leading-snug " + syne.className}>
+              The content and the location injected a true spirit of team work and
+              consistency within us. Shot during the mid-summer, under the
+              45&#176;C! Shout out to everyone in this project GHG calculations
+              in-line!
+            </p>
+            <div
+              className={
+                "text-xl py-4 font-medium flex flex-col gap-2 " + syne.className
+              }
+            >
+              <p className="">Brand: @wahl_mea</p>
+              <p className="">Campaign: GROOMING ASPIRATIONS SINCE 1919</p>
+              <p className="">Video: @ARRIChannel </p>
+              <p className="">Year: 2022</p>
+              <p className="">Location: U.A.E.</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
       <div className="w-full lg:py-20 py-10 lg:px-28 px-5 lg:grid hidden lg:gap-16 gap-5">
         <Reveal>
-          <h1
-            className={
-              "lg:text-8xl text-3xl font-semibold w-full gradientText " +
-              syne.className
-            }
-          >
-            Frames
-          </h1>
+          <h1 className={"lg:text-8xl text-3xl font-semibold w-full gradientText " + syne.className}>Frames</h1>
         </Reveal>
         <Swiper
           className="m-auto w-full"
@@ -181,7 +177,9 @@ const Creation = () => {
         </Reveal>
         <div className="w-full flex flex-col items-center lg:gap-10 gap-7">
           <div className="w-full grid lg:grid-cols-12 grid-cols-1 gap-3">
-            <Link
+          <CreationCard className={"lg:col-span-6"}/>
+						<CreationCard className={"lg:col-span-6"}/>
+            {/* <Link
               href={"/creation"}
               className="group/creation lg:col-span-6 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 "
             >
@@ -215,7 +213,7 @@ const Creation = () => {
                   WAHL MEA
                 </h2>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

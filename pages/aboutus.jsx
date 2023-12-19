@@ -1,13 +1,43 @@
 import Layout from '@/components/Layout'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Inter, Syne, Nunito, Quicksand } from 'next/font/google'
 import TeamCard from '@/components/TeamCard'
 import HeroSection from '@/components/HeroSection'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
+import axios from 'axios'
 
 const syne = Syne({ subsets: ['latin'] })
 const quicksand = Quicksand({ subsets: ['latin'] })
 
-const aboutus = () => {
+const Aboutus = () => {
+  const breakpoints = {
+		1024: {
+			slidesPerView: 3,
+		},
+		768: {
+			slidesPerView: 3,
+		},
+		648: {
+			slidesPerView: 2,
+		},
+		320: {
+			slidesPerView: 1,
+		},
+	}
+
+  const [teams, setTeams] = useState([])
+  useEffect(() => {
+axios("https://huckster-backend.vercel.app/get-team", {
+  method: "GET"
+
+})
+.then((res) => {
+  setTeams(res.data.response)
+})
+  }, [])
+
   return (
     <Layout>
       <HeroSection img={"https://framerusercontent.com/images/6mTE8bYupQVqoB9pUM5luuGjSBs.jpg"} heading={'For You'} para={'Positioned as a guiding force, it navigates through challenge*'} />
@@ -38,13 +68,31 @@ const aboutus = () => {
 
       <div className='lg:px-28 px-5 w-screen'>
         <h1 className={'mx-auto lg:p-12 py-7 lg:text-6xl text-2xl font-semibold w-full text-center gradientText ' + syne.className}>OUR CREATIVE CULTURE</h1>
-        <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
+        <Swiper className='m-auto w-full h-full'
+						grabCursor={true}
+						loop={true}
+						breakpoints={breakpoints}
+						spaceBetween={20}
+						slidesPerView={3}
+						modules={[Autoplay]}
+						autoplay={{
+							delay: 10000
+						}}
+					>
+           { teams.map((value , index) => {
+             return <SwiperSlide className=''><TeamCard value={value}/></SwiperSlide>
+           } ) }
+					</Swiper>
+
+
+        {/* <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
+          
           <TeamCard />
           <TeamCard />
           <TeamCard />
-        </div>
+        </div> */}
         <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
-        <p className={'hidden lg:py-12 py-7 w-full lg:block lg:text-3xl font-semibold text-left gradientText ' + syne.className}>Where EXTRAORDINARY<br/> becomes the norm!</p>
+        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-3xl font-semibold text-left gradientText ' + syne.className}>Where EXTRAORDINARY<br/> becomes the norm!</p>
       </div>
 
       {/* desktop view */}
@@ -99,4 +147,4 @@ const aboutus = () => {
   )
 }
 
-export default aboutus
+export default Aboutus
