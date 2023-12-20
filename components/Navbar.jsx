@@ -52,13 +52,13 @@ const Navbar = () => {
         <div className="w-full flex justify-between items-center">
           <Link href={"/"}>
             <img
-              className="lg:w-44 w-24"
+              className="lg:w-52 w-24"
               src="/assets/HucksterLogo.png"
               alt=""
             />
           </Link>
           <div className="flex gap-10">
-            <Link href={"/contactus"} className="lg:block hidden text-xl">We're just a call away! </Link>{" "}
+            <Link href={"/contactus"} className="lg:block hidden text-xl">wE'Re jUsT A CaLl aWaY</Link>{" "}
             <div onClick={() => {
                 if (show) {
                   control.start("hidden");

@@ -31,7 +31,7 @@ const Dropdown = ({ number, title, subtitle, list = [] }) => {
         top: "0"
       }
     }} animate={control} initial="hidden" className='flex w-full lg:gap-5 gap-3 '>
-      <div className=' w-full h-max bg-white/10  rounded-lg px-4  py-3 hover:pl-8 duration-200 transition-all'>
+      <div className=' w-full h-max bg-white/10  px-4  py-3 hover:pl-8 duration-200 transition-all'>
         <button className='w-full flex items-center justify-between ' onClick={() => setIsOpen((prev) => !prev)}>
           <div className='flex flex-col justify-start items-start '>
             <h1 className={'gradientText delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-xl font-semibold text-white ' + syne.className}>{title}</h1>
@@ -42,7 +42,7 @@ const Dropdown = ({ number, title, subtitle, list = [] }) => {
           }
         </button>
         {isOpen && (
-          <div className='p-3 mt-3 bg-white/10  rounded-lg' >
+          <div className='p-3 mt-3 bg-white/10 ' >
             {
               list.map((item) => {
                 return <p>{item}</p>

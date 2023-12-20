@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 const TeamCard = ({value}) => {
   const control = useAnimation();
   return (
-    <div onMouseEnter={() => control.set("visible")} onMouseLeave={() => control.set("hidden")} className='border border-white/40 rounded-xl p-3 text-center relative overflow-hidden'>
+    <div onMouseEnter={() => control.set("visible")} onMouseLeave={() => control.set("hidden")} className='border border-white/40 p-3 text-center relative overflow-hidden'>
       <motion.div
         transition={{
           ease: "easeInOut",
@@ -44,7 +44,7 @@ const TeamCard = ({value}) => {
           </div>
         </Reveal>
       </motion.div>
-      <img className='rounded-lg hover:grayscale w-full h-80 object-cover transition duration-500' src={value?.photo} alt="" />
+      <img className=' hover:grayscale w-full h-80 object-cover transition duration-500' src={value?.photo} alt="" />
       <h1 className={'text-xl pt-3 ' + syne.className}>{value?.name}</h1>
       <p className='text-white/80'>{value?.designation}</p>
     </div>

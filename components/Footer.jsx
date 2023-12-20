@@ -50,7 +50,7 @@ const Footer = () => {
           <div className='lg:w-2/6 pb-3 w-full'>
             <h1 className={'text-xl font-semibold text-white pb-5 ' + syne.className}>Subscribe to our newsletter</h1>
             <div className='grid gap-4'>
-              <input className='bg-white/20 rounded-full  lg:px-7 px-4  py-3 outline-none w-full '  type="email" placeholder='Enter your email id' />
+              <input className='bg-white/20  lg:px-7 px-4  py-3 outline-none w-full '  type="email" placeholder='Enter your email id' />
              <Button text={"Subscribe"}/>
             </div>
           </div>

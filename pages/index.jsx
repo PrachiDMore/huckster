@@ -48,18 +48,20 @@ export default function Home() {
 				<Image className={index === 3 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/TIC_GIF_02_A24.gif" alt="" />
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
 				<div className={'gap-3 flex flex-col justify-end lg:py-14 py-20 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
-					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>BFL</h1></SlideReveal>
-					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>FUH</h1></SlideReveal>
-					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>WAHL MEA</h1></SlideReveal>
-					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Outlet Price</h1></SlideReveal>
+					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Reel 2022</h1></SlideReveal>
+					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Treated by Experts</h1></SlideReveal>
+					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Grooming Aspirations</h1></SlideReveal>
+					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Mid-Year Sale</h1></SlideReveal>
 				</div>
 			</section>
 
 			<Reveal>
 				<div className='w-full lg:py-14 py-10 lg:px-28 px-5'>
-					<p className={'lg:text-5xl text-2xl font-medium w-full text-center  ' + syne.className}>
-						At the house of Huckster, <br />we create magic that captivates <br />and transcends the solitary emotions.
-					</p>
+					<p className={'lg:text-5xl text-2xl font-medium pl-20 w-full text-left uppercase ' + syne.className}>At the house of Huckster, </p>
+					<p className={'lg:text-5xl text-2xl font-medium w-full text-left uppercase ' + syne.className}>we create magic </p>
+					<p className={'lg:text-5xl text-2xl font-medium w-full text-left uppercase ' + syne.className}>that captivates and transcends</p>
+					<p className={'lg:text-5xl text-2xl font-medium w-full text-left uppercase ' + syne.className}> the solitary emotions. </p>
+					
 				</div>
 			</Reveal>
 
@@ -68,12 +70,14 @@ export default function Home() {
 				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
-						<CreationCard className={"lg:col-span-8"}/>
-						<CreationCard className={"lg:col-span-4"}/>
-						<CreationCard className={"lg:col-span-4"}/>
-						<CreationCard className={"lg:col-span-8"}/>
+						<CreationCard className={"lg:col-span-12"}/>
+						<CreationCard className={"lg:col-span-6"}/>
+						<CreationCard className={"lg:col-span-6"}/>
+						<CreationCard className={"lg:col-span-12"}/>
 					</div>
+					<div className='w-full flex justify-end items-end'>
 					<Link href={'/work'}><Button className={"w-48"} text={"Watch More"} /></Link>
+					</div>
 				</div>
 			</div>
 
@@ -107,7 +111,9 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<Button className={"w-48"} text={"Watch More"} />
+					<div className='w-full flex justify-end items-end'>
+						<Button className={"w-48"} text={"Watch More"} />
+					</div>
 				</div>
 			</div>
 
@@ -150,17 +156,17 @@ export default function Home() {
 				</div>
 
 				<div className={'lg:w-9/12 w-full flex flex-col items-end justify-end lg:gap-10 gap-10 ' + syne.className}>
-					<Dropdown number={'01'} title={'Design'} list={["Creative Development", "Script Writing", "Storyboarding and Pre-Visuals"]} subtitle={'The story begins'} />
-					<Dropdown number={'02'} title={'Pre-Production'} list={["Project Management", "Administrator & Logistics", "Location Scouting", "Talent Casting", "Crew Sourcing"]} subtitle={'The characters are introduced'} />
-					<Dropdown number={'03'} title={'Production'} list={["Scalable Service Production", "Award Winning Directors & Producers", "In-house cinema Gear", "On-set Culture of Collaboration", "Studio Space & Rentals"]} subtitle={'The main story hook'} />
-					<Dropdown number={'04'} title={'Post-Production'} list={["Editing", "Motions Graphics & Animation", "Sound Design", "Color Grading", "Multi-Platform Masterting & Delivery"]} subtitle={'The climax'} />
+					<Dropdown number={'01'} title={'Design'} list={["Concept", "Script", "Storyboarding and Pre-Visuals"]} subtitle={'The story begins'} />
+					<Dropdown number={'02'} title={'Pre-Production'} list={["Technical Recce", "Casting", "Location Scouting", "Permissions"]} subtitle={'The characters are introduced'} />
+					<Dropdown number={'03'} title={'Production'} list={["Award Winning Artisans", "Advanced Equipments and Technology"]} subtitle={'The main story hook'} />
+					<Dropdown number={'04'} title={'Post-Production'} list={["VFX & VR ", "Music & Sound Design", "Color Grading", "Multi-Platform Masterting & Delivery"]} subtitle={'The climax'} />
 				</div>
 
 			</div>
 
 			{/* production partener */}
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col justify-center items-center'>
-				<p className={'lg:text-7xl text-2xl font-semibold text-center gradientText ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
+				<p className={'lg:text-7xl text-2xl font-semibold text-left gradientText ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 
 				<div className='lg:mt-20 mt-10 w-full '>
 					<Swiper className='m-auto w-full h-full'
@@ -197,7 +203,7 @@ export default function Home() {
 			</div>
 
 			<div className='w-full lg:py-28 py-10 lg:px-28 px-5'>
-				<p className={'lg:text-8xl text-4xl font-semibold text-center ' + syne.className}>Let's Create<br /> Something!</p>
+				<p className={'lg:text-8xl text-4xl font-semibold text-center ' + syne.className}>Let's Create<br /> Together!</p>
 				{/* <div className='w-full py-10 flex flex-col items-center gap-10 border border-white/50 rounded-3xl'></div> */}
 			</div>
 

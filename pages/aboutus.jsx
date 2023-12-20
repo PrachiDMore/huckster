@@ -46,13 +46,11 @@ axios("https://huckster-backend.vercel.app/get-team", {
         <div className='px-28  py-20 w-screen lg:flex items-center  gap-10 hidden'>
           <div className='w-[70%]'>
             <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-3xl font-semibold text-white pb-5 ' + syne.className}>*at the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
-            <div className='w-full grid grid-cols-3 gap-5'>
-              <p className={'pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. </p>
-              <p className={'pb-3 ' + quicksand.className}>What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. </p>
-              <p className={'pb-3 ' + quicksand.className}>Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
+            <div className='w-full '>
+              <p className={'pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
             </div>
           </div>
-          <img className=' w-[30%] h-1/2  rounded-xl' src="/assets/about.png" alt="" />
+          <img className=' w-[30%] h-1/2 ' src="/assets/about.png" alt="" />
         </div>
 
       {/* mobile view */}
@@ -60,9 +58,7 @@ axios("https://huckster-backend.vercel.app/get-team", {
         <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-2xl font-semibold text-white pb-5 ' + syne.className}>At the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
         <img className=' w-full rounded-xl' src="/assets/about.png" alt="" />
         <div className=''>
-          <p className={'text-lg pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. </p>
-          <p className={'text-lg pb-3 ' + quicksand.className}>What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. </p>
-          <p className={'text-lg ' + quicksand.className}>Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
+          <p className={'text-lg pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
         </div>
       </div>
 
@@ -92,7 +88,7 @@ axios("https://huckster-backend.vercel.app/get-team", {
           <TeamCard />
         </div> */}
         <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
-        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-3xl font-semibold text-left gradientText ' + syne.className}>Where EXTRAORDINARY<br/> becomes the norm!</p>
+        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-4xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br/> bEcOmEs tHe nOrM!</p>
       </div>
 
       {/* desktop view */}
@@ -108,7 +104,7 @@ axios("https://huckster-backend.vercel.app/get-team", {
             </div>
             <div className='lg:left-32 left-0 relative lg:w-8/12 w-[85%] h-max'>
               <h1 className={'lg:-left-32 -left-10 -top-4 leading-3 lg:opacity-20 opacity-25 absolute text-[100px] lg:text-[200px] font-bold ' + syne.className}>02</h1>
-              <h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Our Vision</h2>
+              <h2 className='gradientText text-white/90 font-bold lg:text-4xl text-3xl'>Visionary's Vision</h2>
               <p className='mt-1 lg:text-lg lg:w-[90%] w-full'>A daring vision, dreamt to amplify the narratives on the canvas. The eyes conjure the artistic echoes, solitary emotions and the culture through the moving frames with the bespoke craftsmanship of contemporary motion art.</p>
               <p className='mt-1 lg:text-lg lg:w-[90%] w-full '>The vision is to reimagine genres, weave narratives to bridge the time across cultures. Our commitment does not stop at creativity, it involves the need of the hour commitment to responsibility, a pursuit to achieve sustainability.</p>
             </div>
