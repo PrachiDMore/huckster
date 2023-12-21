@@ -18,7 +18,7 @@ const TeamCard = ({value}) => {
         }}
         variants={{
           hidden: {
-            top: "-333px",
+            top: "-483px",
             position: "absolute",
           },
           visible: {
@@ -26,10 +26,10 @@ const TeamCard = ({value}) => {
             position: "absolute",
             animationDelay: "900ms"
           }
-        }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-333px] h-[333px] w-full bg-black/30 backdrop-blur-lg z-[100]'>
+        }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-483px] h-[483px] w-full bg-black/30 backdrop-blur-lg z-[100]'>
         <Reveal>
           <div className='flex flex-col items-start p-4'>
-            <p className={'text-start text-sm pb-2 ' + inter.className}>{value?.description} </p>
+            <p className={'text-start text-lg pb-2 ' + inter.className}>{value?.description} </p>
             {/* <h1 className={'font-bold ' + syne.className}>Roles and Films:</h1>
             <ul  className={'flex flex-col items-start text-sm text-start pb-2 ' + inter.className}>
               <li>Camera & Electrical, Costume Designer - 'Not Born Heroes' (2010)</li>
@@ -44,7 +44,7 @@ const TeamCard = ({value}) => {
           </div>
         </Reveal>
       </motion.div>
-      <img className=' hover:grayscale w-full h-80 object-cover transition duration-500' src={value?.photo} alt="" />
+      <img className=' hover:grayscale w-full h-[470px] object-cover transition duration-500' src={value?.photo} alt="" />
       <h1 className={'text-xl pt-3 ' + syne.className}>{value?.name}</h1>
       <p className='text-white/80'>{value?.designation}</p>
     </div>

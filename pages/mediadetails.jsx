@@ -33,7 +33,7 @@ const mediadetails = () => {
         <p className={'lg:text-xl  pb-3 ' + inter.className}>I was always known as an athlete. That's what I was and that's how people thought of me. As a kid, I was tall and lanky and could jump out of the gym. Sports, whether I liked it or not, became a natural identity for me.</p>
         <p className={'lg:text-xl  pb-3 ' + inter.className}>Being a good athlete created opportunities that I otherwise wouldn't have had. As a sophomore in high school, I verbally committed to university, and received a full athletic scholarship. By the age of 18, I was competing in the London 2012 Olympics. When I graduated, it made sense to continue playing professionally, as I got a salary straight out of college.</p>
         <div className='w-full h-96 pb-3 flex justify-center '>
-          <img className='h-full lg:w-[70%] w-full rounded-xl object-cover' src="/assets/work.webp" alt="" />
+          <img className='h-full lg:w-[70%] w-full object-cover' src="/assets/work.webp" alt="" />
         </div>
         <p className={'lg:text-xl  pb-3 ' + inter.className}>I've been thinking a lot about how Earth Mama began. In the beginning, I wondered if an audience could ever empathize with a mother who makes a critical mistake with her pregnancy. People are so quick to pull out their moral compass when it comes to motherhood. And even more so when it comes to judging Black mothers.</p>
       </section>

@@ -49,7 +49,7 @@ const VideoPlayer = ({ src }) => {
 
   return (
     <div className="relative">
-      <video ref={videoRef} src={src} className="w-full h-screen rounded-xl object-cover" controls></video>
+      <video ref={videoRef} src={src} className="w-full h-screen object-cover" controls></video>
     </div>
   );
 };

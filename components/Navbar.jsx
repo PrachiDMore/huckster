@@ -52,7 +52,7 @@ const Navbar = () => {
         <div className="w-full flex justify-between items-center">
           <Link href={"/"}>
             <img
-              className="lg:w-52 w-24"
+              className="lg:w-60 w-24"
               src="/assets/HucksterLogo.png"
               alt=""
             />
@@ -90,8 +90,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/aboutus"
-                    ? "text-blue-500 lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-white duration-200 px-3 py-2 rounded-full"
+                    ? "text-orange lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-orange duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/aboutus"}
               >
@@ -106,8 +106,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/work"
-                    ? "text-[#D5715A] lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
-                    : "gradientText w-max lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    ?  "text-olive lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-olive duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/work"}
               >
@@ -122,8 +122,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/contactus"
-                    ? "text-blue-500 lg:text-9xl text-5xl font-bold  duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold  hover:text-white duration-200 px-3 py-2 rounded-full"
+                    ?  "text-customeBlue lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-customeBlue duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/contactus"}
               >

@@ -107,11 +107,26 @@ const Creation = () => {
                 "text-xl py-4 font-medium flex flex-col gap-2 " + syne.className
               }
             >
-              <p className="">Brand: @wahl_mea</p>
-              <p className="">Campaign: GROOMING ASPIRATIONS SINCE 1919</p>
-              <p className="">Video: @ARRIChannel </p>
-              <p className="">Year: 2022</p>
-              <p className="">Location: U.A.E.</p>
+              <div className="flex gap-2 items-center">
+                <div className="w-3 h-3 rounded bg-gray"></div>
+                <p className="">Brand: @wahl_mea</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <div className="w-3 h-3 rounded bg-tan"></div>
+                <p className="">Campaign: GROOMING ASPIRATIONS SINCE 1919</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <div className="w-3 h-3 rounded bg-orange"></div>
+                <p className="">Video: @ARRIChannel </p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <div className="w-3 h-3 rounded bg-customeBlue"></div>
+                <p className="">Year: 2022</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <div className="w-3 h-3 rounded bg-teal"></div>
+                <p className="">Location: U.A.E.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -133,28 +148,28 @@ const Creation = () => {
             delay: 2000,
           }}
         >
-          <SwiperSlide className="rounded-3xl overflow-hidden h-64 flex justify-center items-center">
+          <SwiperSlide className="overflow-hidden h-64 flex justify-center items-center">
             <img
               className="h-full w-full"
               src="https://assets-global.website-files.com/633c3f6cb573b7ca538e9ffa/639b78f4806369ac8c0d944d_WestJet_Christmas%20Miracle.00_01_41_07.Still014-p-1080.jpg"
               alt=""
             />
           </SwiperSlide>
-          <SwiperSlide className="rounded-3xl overflow-hidden h-64 flex justify-center items-center">
+          <SwiperSlide className="overflow-hidden h-64 flex justify-center items-center">
             <img
               className="h-full w-full"
               src="https://assets-global.website-files.com/633c3f6cb573b7ca538e9ffa/639b7937d471181c6ad7b432_WestJet_Christmas%20Miracle.00_02_32_03.Still021-p-1080.jpg"
               alt=""
             />
           </SwiperSlide>
-          <SwiperSlide className="rounded-3xl overflow-hidden h-64 flex justify-center items-center">
+          <SwiperSlide className="overflow-hidden h-64 flex justify-center items-center">
             <img
               className="h-full w-full"
               src="https://assets-global.website-files.com/633c3f6cb573b7ca538e9ffa/639b791c647ed2ea5ef85cf0_WestJet_Christmas%20Miracle.00_02_25_15.Still022-p-1080.jpg"
               alt=""
             />
           </SwiperSlide>
-          <SwiperSlide className="rounded-3xl overflow-hidden h-64 flex justify-center items-center">
+          <SwiperSlide className="overflow-hidden h-64 flex justify-center items-center">
             <img
               className="h-full w-full"
               src="https://assets-global.website-files.com/633c3f6cb573b7ca538e9ffa/639b7937d471181c6ad7b432_WestJet_Christmas%20Miracle.00_02_32_03.Still021-p-1080.jpg"
@@ -176,9 +191,9 @@ const Creation = () => {
           </h1>
         </Reveal>
         <div className="w-full flex flex-col items-center lg:gap-10 gap-7">
-          <div className="w-full grid lg:grid-cols-12 grid-cols-1 gap-3">
-          <CreationCard className={"lg:col-span-6"}/>
-						<CreationCard className={"lg:col-span-6"}/>
+          <div className="w-full grid lg:grid-cols-12 grid-cols-1 ">
+            <CreationCard className={"lg:col-span-6"} />
+            <CreationCard className={"lg:col-span-6"} />
             {/* <Link
               href={"/creation"}
               className="group/creation lg:col-span-6 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 "

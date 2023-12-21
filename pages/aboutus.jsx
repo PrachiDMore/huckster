@@ -76,19 +76,12 @@ axios("https://huckster-backend.vercel.app/get-team", {
 						}}
 					>
            { teams.map((value , index) => {
-             return <SwiperSlide className=''><TeamCard value={value}/></SwiperSlide>
+             return <SwiperSlide className=''><TeamCard value={value}/></SwiperSlide> 
            } ) }
 					</Swiper>
 
-
-        {/* <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
-          
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-        </div> */}
         <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
-        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-4xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br/> bEcOmEs tHe nOrM!</p>
+        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-5xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br/> bEcOmEs tHe nOrM!</p>
       </div>
 
       {/* desktop view */}

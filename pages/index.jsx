@@ -69,7 +69,7 @@ export default function Home() {
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 lg:grid hidden lg:gap-16 gap-5'>
 				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
-					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
+					<div className='w-full grid lg:grid-cols-12 grid-cols-1 '>
 						<CreationCard className={"lg:col-span-12"}/>
 						<CreationCard className={"lg:col-span-6"}/>
 						<CreationCard className={"lg:col-span-6"}/>
