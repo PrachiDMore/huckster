@@ -184,8 +184,17 @@ export default function Home() {
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col justify-center items-center'>
 				<p className={'lg:text-7xl text-2xl font-semibold text-left gradientText ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 
-				<div className='lg:mt-20 mt-10 w-full '>
-					<Swiper className='m-auto w-full h-full'
+				<div className='lg:mt-20 mt-10 w-full lg:mx-28 mx-5'>
+					<div class="card-container ">
+						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></div>
+						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></div>
+						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></div>
+						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></div>
+						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></div>
+						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></div>
+					</div>
+
+					{/* <Swiper className='m-auto w-full h-full'
 						grabCursor={true}
 						loop={true}
 						breakpoints={breakpoints}
@@ -204,7 +213,7 @@ export default function Home() {
 						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
 						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
 						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-					</Swiper>
+					</Swiper> */}
 				</div>
 			</div>
 
@@ -218,9 +227,8 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className='w-full lg:py-28 py-10 lg:px-28 px-5'>
-				<p className={'lg:text-8xl text-4xl font-semibold text-center ' + syne.className}>Let's Create<br /> Together!</p>
-				{/* <div className='w-full py-10 flex flex-col items-center gap-10 border border-white/50 rounded-3xl'></div> */}
+			<div className='scroll-text-container w-full lg:py-28 py-14 px-5'>
+				<p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}>Let's create <span className='text-accentorange'>Together!</span></p>
 			</div>
 
 		</Layout>

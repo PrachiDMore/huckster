@@ -72,10 +72,10 @@ const work = () => {
 				</div>
 			</div>
 
-			<div className='w-full lg:py-28 py-10 lg:px-28 px-5'>
-				<p className={'lg:text-8xl text-4xl font-semibold text-center ' + syne.className}>Intrigued?<br /> Let's get started.</p>
-				{/* <div className='w-full py-10 bg-gradient-to-b lg:from-white/40 from-white/20 to-white/0  flex flex-col items-center gap-10 border border-white/50 rounded-3xl'></div> */}
-			</div>
+
+			<div className='scroll-text-container w-full lg:py-28 py-10 px-5'>
+        <p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}><span className='text-accentorange'>Intrigued?</span> Let's get started!</p>
+      </div>
 
 		</Layout >
 	)

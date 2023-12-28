@@ -119,9 +119,12 @@ a {
       rgba(255, 255, 255, 0.7),
       rgb(255, 255, 255, 0.7)),
     linear-gradient(to right,
-      rgb(0, 255, 136),
-      rgb(255, 128, 0),
-      rgba(0, 100, 200, 1));
+      rgb(38, 83, 103),
+      rgb(146, 148, 137),
+      rgb(152, 197, 210),
+      rgb(186, 186, 141),
+      rgb(218, 164, 104),
+      rgb(230, 123, 96));
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
@@ -188,6 +191,30 @@ a {
   0% {
     transform: translateX(100%);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.card-container {
+  display: flex;
+  animation: scrollCards 10s linear infinite;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  margin: 1px;
+  background-color: #f0f0f0;
+ overflow: hidden;
+}
+
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0);
+  }
+
   100% {
     transform: translateX(-100%);
   }

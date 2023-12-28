@@ -128,8 +128,8 @@ const Aboutus = () => {
       </div>
 
 
-      <div className='scroll-text-container w-full lg:py-28 py-10 px-5'>
-        <p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}>Let's start <span className='text-accentorange'>together.</span></p>
+      <div className='scroll-text-container w-full lg:py-28 py-14 px-5'>
+        <p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}>Let's start <span className='text-accentorange'>Something!</span></p>
       </div>
 
     </Layout >
