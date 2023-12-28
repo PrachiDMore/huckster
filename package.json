@@ -20,6 +20,7 @@
     "react-youtube": "^10.1.0",
     "sonner": "^1.2.4",
     "swiper": "^11.0.4",
+    "tailwind-merge": "^2.2.0",
     "video.js": "^8.6.1"
   },
   "devDependencies": {

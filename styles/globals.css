@@ -7,7 +7,8 @@ body {
   -webkit-tap-highlight-color: transparent;
   /* cursor: none !important; */
 }
-*{
+
+* {
   /* cursor: none !important; */
 }
 
@@ -86,26 +87,27 @@ body {
   pointer-events: none;
 }
 
-Link{
+Link {
   outline: none;
 }
 
-a{
+a {
   outline: none !important;
 }
 
-.animate-scroll{
+.animate-scroll {
   height: 2px;
   width: 150px;
-  animation: scrollanimate 2s infinite cubic-bezier(0.22, 1, 0.36, 1); 
+  animation: scrollanimate 2s infinite cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes scrollanimate {
-  0%{
+  0% {
     transform: scaleX(0);
     transform-origin: left;
   }
-  100%{
+
+  100% {
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -113,17 +115,13 @@ a{
 
 .link {
   background:
-    linear-gradient(
-      to right,
+    linear-gradient(to right,
       rgba(255, 255, 255, 0.7),
-      rgb(255, 255, 255, 0.7)
-    ),
-    linear-gradient(
-      to right,
+      rgb(255, 255, 255, 0.7)),
+    linear-gradient(to right,
       rgb(0, 255, 136),
       rgb(255, 128, 0),
-      rgba(0, 100, 200, 1)
-  );
+      rgba(0, 100, 200, 1));
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
@@ -132,4 +130,65 @@ a{
 
 .link:hover {
   background-size: 0 3px, 100% 3px;
+}
+
+.custom h1 {
+  font-size: 32px;
+}
+
+.custom h2 {
+  font-size: 24px;
+}
+
+.custom h3 {
+  font-size: 18.72px;
+}
+
+.custom h4 {
+  font-size: 16px;
+}
+
+.custom h5 {
+  font-size: 13.28px;
+}
+
+.custom h6 {
+  font-size: 12px;
+}
+
+
+.team-gradient-radial {
+  background: rgb(38, 83, 103);
+  background: -moz-radial-gradient(circle, rgba(38, 83, 103, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(146, 148, 137, 1) 41%, rgba(186, 186, 141, 1) 63%, rgba(218, 164, 104, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(38, 83, 103, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(146, 148, 137, 1) 41%, rgba(186, 186, 141, 1) 63%, rgba(218, 164, 104, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  background: radial-gradient(circle, rgba(38, 83, 103, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(146, 148, 137, 1) 41%, rgba(186, 186, 141, 1) 63%, rgba(218, 164, 104, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#265367", endColorstr="#e67b60", GradientType=1);
+}
+
+.team-gradient-linear {
+  background: rgb(38, 83, 103);
+  background: -moz-linear-gradient(90deg, rgba(38, 83, 103, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(146, 148, 137, 1) 41%, rgba(186, 186, 141, 1) 63%, rgba(218, 164, 104, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(38, 83, 103, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(146, 148, 137, 1) 41%, rgba(186, 186, 141, 1) 63%, rgba(218, 164, 104, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  background: linear-gradient(90deg, rgba(38, 83, 103, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(146, 148, 137, 1) 41%, rgba(186, 186, 141, 1) 63%, rgba(218, 164, 104, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#265367", endColorstr="#e67b60", GradientType=1);
+}
+
+
+.scroll-text-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-text {
+  white-space: nowrap;
+  animation: scroll 12s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

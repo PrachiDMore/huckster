@@ -1,24 +1,40 @@
-import { Inter, Syne } from 'next/font/google'
+import { Syne } from 'next/font/google'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 import { useState } from 'react'
 import Button from '@/components/Button'
 import Dropdown from '@/components/Dropdown'
 import 'swiper/css';
-import TeamCard from '@/components/TeamCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Link from 'next/link'
-import { motion } from 'framer-motion';
 import Reveal from '@/components/Reveal'
 import SlideReveal from '@/components/SlideReveal'
 import CreationCard from '@/components/CreationCard'
+import { twMerge } from 'tailwind-merge'
 
-const inter = Inter({ subsets: ['latin'] })
+
 const syne = Syne({ subsets: ['latin'] })
 
 export default function Home() {
 	const [index, setIndex] = useState(0)
+
+	const handleHoverColors = () => {
+		const random = Math.random() * 100;
+		if (random < 16.66) {
+			return 'hover:text-accentolive';
+		} else if (random > 16.66 && random < 33.32) {
+			return 'hover:text-accentblue';
+		} else if (random > 33.32 && random < 49.98) {
+			return 'hover:text-accenttan';
+		} else if (random > 49.98 && random < 66.64) {
+			return 'hover:text-accentteal';
+		} else if (random > 66.64 && random < 83.3) {
+			return 'hover:text-accentorange';
+		} else {
+			return 'hover:text-accentgray';
+		}
+	}
 	const breakpoints = {
 		1024: {
 			slidesPerView: 4,
@@ -48,10 +64,10 @@ export default function Home() {
 				<Image className={index === 3 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/TIC_GIF_02_A24.gif" alt="" />
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
 				<div className={'gap-3 flex flex-col justify-end lg:py-14 py-20 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
-					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={index === 0 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Reel 2022</h1></SlideReveal>
-					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={index === 1 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Treated by Experts</h1></SlideReveal>
-					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={index === 2 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Grooming Aspirations</h1></SlideReveal>
-					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={index === 3 ? 'w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize' : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize'}>Mid-Year Sale</h1></SlideReveal>
+					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={twMerge(index === 0 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Reel 2022</h1></SlideReveal>
+					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={twMerge(index === 1 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Treated by Experts</h1></SlideReveal>
+					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={twMerge(index === 2 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Grooming Aspirations</h1></SlideReveal>
+					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={twMerge(index === 3 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Mid-Year Sale</h1></SlideReveal>
 				</div>
 			</section>
 
@@ -61,7 +77,7 @@ export default function Home() {
 					<p className={'lg:text-5xl text-2xl font-medium w-full text-left uppercase ' + syne.className}>we create magic </p>
 					<p className={'lg:text-5xl text-2xl font-medium w-full text-left uppercase ' + syne.className}>that captivates and transcends</p>
 					<p className={'lg:text-5xl text-2xl font-medium w-full text-left uppercase ' + syne.className}> the solitary emotions. </p>
-					
+
 				</div>
 			</Reveal>
 
@@ -70,13 +86,13 @@ export default function Home() {
 				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 '>
-						<CreationCard className={"lg:col-span-12"}/>
-						<CreationCard className={"lg:col-span-6"}/>
-						<CreationCard className={"lg:col-span-6"}/>
-						<CreationCard className={"lg:col-span-12"}/>
+						<CreationCard className={"lg:col-span-12"} />
+						<CreationCard className={"lg:col-span-6"} />
+						<CreationCard className={"lg:col-span-6"} />
+						<CreationCard className={"lg:col-span-12"} />
 					</div>
 					<div className='w-full flex justify-end items-end'>
-					<Link href={'/work'}><Button className={"w-48"} text={"Watch More"} /></Link>
+						<Link href={'/work'}><Button className={"w-48"} text={"Watch More"} /></Link>
 					</div>
 				</div>
 			</div>

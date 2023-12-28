@@ -13,29 +13,28 @@ const quicksand = Quicksand({ subsets: ['latin'] })
 
 const Aboutus = () => {
   const breakpoints = {
-		1024: {
-			slidesPerView: 3,
-		},
-		768: {
-			slidesPerView: 3,
-		},
-		648: {
-			slidesPerView: 2,
-		},
-		320: {
-			slidesPerView: 1,
-		},
-	}
+    1024: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    648: {
+      slidesPerView: 2,
+    },
+    320: {
+      slidesPerView: 1,
+    },
+  }
 
   const [teams, setTeams] = useState([])
   useEffect(() => {
-axios("https://huckster-backend.vercel.app/get-team", {
-  method: "GET"
-
-})
-.then((res) => {
-  setTeams(res.data.response)
-})
+    axios("https://huckster-backend.vercel.app/get-team", {
+      method: "GET"
+    })
+      .then((res) => {
+        setTeams(res.data.response)
+      })
   }, [])
 
   return (
@@ -43,15 +42,15 @@ axios("https://huckster-backend.vercel.app/get-team", {
       <HeroSection img={"https://framerusercontent.com/images/6mTE8bYupQVqoB9pUM5luuGjSBs.jpg"} heading={'For You'} para={'Positioned as a guiding force, it navigates through challenge*'} />
 
       {/* desktop view */}
-        <div className='px-28  py-20 w-screen lg:flex items-center  gap-10 hidden'>
-          <div className='w-[70%]'>
-            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-3xl font-semibold text-white pb-5 ' + syne.className}>*at the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
-            <div className='w-full '>
-              <p className={'pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
-            </div>
+      <div className='px-28  py-20 w-screen lg:flex items-center  gap-10 hidden'>
+        <div className='w-[70%]'>
+          <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-3xl font-semibold text-white pb-5 ' + syne.className}>*at the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
+          <div className='w-full '>
+            <p className={'pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
           </div>
-          <img className=' w-[30%] h-1/2 ' src="/assets/about.png" alt="" />
         </div>
+        <img className=' w-[30%] h-1/2 ' src="/assets/about.png" alt="" />
+      </div>
 
       {/* mobile view */}
       <div className='px-5 py-10 w-screen flex flex-col items-center justify-center gap-5 lg:hidden'>
@@ -65,23 +64,25 @@ axios("https://huckster-backend.vercel.app/get-team", {
       <div className='lg:px-28 px-5 w-screen'>
         <h1 className={'mx-auto lg:p-12 py-7 lg:text-6xl text-2xl font-semibold w-full text-center gradientText ' + syne.className}>OUR CREATIVE CULTURE</h1>
         <Swiper className='m-auto w-full h-full'
-						grabCursor={true}
-						loop={true}
-						breakpoints={breakpoints}
-						spaceBetween={20}
-						slidesPerView={3}
-						modules={[Autoplay]}
-						autoplay={{
-							delay: 10000
-						}}
-					>
-           { teams.map((value , index) => {
-             return <SwiperSlide className=''><TeamCard value={value}/></SwiperSlide> 
-           } ) }
-					</Swiper>
+          grabCursor={true}
+          loop={true}
+          breakpoints={breakpoints}
+          spaceBetween={20}
+          slidesPerView={3}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 10000
+          }}
+        >
+          {
+            teams?.map((value, index) => {
+              return value?.display && <SwiperSlide className='' key={index}><TeamCard value={value} /></SwiperSlide>
+            })
+          }
+        </Swiper>
 
         <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
-        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-5xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br/> bEcOmEs tHe nOrM!</p>
+        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-5xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br /> bEcOmEs tHe nOrM!</p>
       </div>
 
       {/* desktop view */}
@@ -127,12 +128,11 @@ axios("https://huckster-backend.vercel.app/get-team", {
       </div>
 
 
-      <div className='w-full lg:py-28 py-10 lg:px-28 px-5'>
-        <p className={'lg:text-8xl text-4xl font-semibold text-center ' + syne.className}>Let's start<br /> something.</p>
-        {/* <div className='w-full py-10 bg-gradient-to-b lg:from-white/40 from-white/20 to-white/0  flex flex-col items-center gap-10 border border-white/50 rounded-3xl'></div> */}
+      <div className='scroll-text-container w-full lg:py-28 py-10 px-5'>
+        <p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}>Let's start <span className='text-accentorange'>together.</span></p>
       </div>
 
-    </Layout>
+    </Layout >
   )
 }
 

@@ -14,6 +14,7 @@ const Navbar = () => {
   const control = useAnimation();
   const linkcontrol = useAnimation();
   const [show, setShow] = useState(false);
+
   const linkvariant = {
     hidden: {
       position: "relative",
@@ -52,7 +53,7 @@ const Navbar = () => {
         <div className="w-full flex justify-between items-center">
           <Link href={"/"}>
             <img
-              className="lg:w-60 w-24"
+              className="lg:w-60 w-24 md:w-44"
               src="/assets/HucksterLogo.png"
               alt=""
             />
@@ -60,18 +61,18 @@ const Navbar = () => {
           <div className="flex gap-10">
             <Link href={"/contactus"} className="lg:block hidden text-xl">wE'Re jUsT A CaLl aWaY</Link>{" "}
             <div onClick={() => {
-                if (show) {
-                  control.start("hidden");
-                  linkcontrol.start("hidden");
-                  setShow(false);
-                } else {
-                  control.start("visible");
-                  linkcontrol.start("visible");
-                  setShow(true);
-                }
-              }} className="text-white flex gap-10 items-center" >
+              if (show) {
+                control.start("hidden");
+                linkcontrol.start("hidden");
+                setShow(false);
+              } else {
+                control.start("visible");
+                linkcontrol.start("visible");
+                setShow(true);
+              }
+            }} className="text-white flex gap-10 items-center" >
               {" "}
-            
+
               {!show ? (
                 <HiOutlineMenuAlt3 className="text-2xl hover:cursor-pointer" />
               ) : (
@@ -90,8 +91,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/aboutus"
-                    ? "text-orange lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-orange duration-200 px-3 py-2 rounded-full"
+                    ? "text-accentorange lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-accentorange duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/aboutus"}
               >
@@ -106,8 +107,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/work"
-                    ?  "text-olive lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-olive duration-200 px-3 py-2 rounded-full"
+                    ? "text-accentolive lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-accentolive duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/work"}
               >
@@ -122,8 +123,8 @@ const Navbar = () => {
               <Link
                 className={
                   router.pathname === "/contactus"
-                    ?  "text-customeBlue lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
-                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-customeBlue duration-200 px-3 py-2 rounded-full"
+                    ? "text-accentblue lg:text-9xl text-5xl font-bold duration-200 px-3 py-2 rounded-full"
+                    : "text-white/70 lg:text-9xl text-5xl font-bold hover:text-accentblue duration-200 px-3 py-2 rounded-full"
                 }
                 href={"/contactus"}
               >

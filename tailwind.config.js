@@ -8,12 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        gray: "#929489",
-        tan: "#DAA468",
-        customeBlue: "#98c5d2",
-        orange: "#E67B60",
-        olive: "#BABA8D",
-        teal: "#265367"
+        accentolive: "#BABA8D",
+        accentblue: "#98c5d2",
+        accenttan: "#DAA468",
+        accentgray: "#929489",
+        accentteal: "#265367",
+        accentorange: "#E67B60",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

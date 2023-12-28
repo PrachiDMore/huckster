@@ -1,16 +1,28 @@
 import Layout from '@/components/Layout'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Inter, Syne } from 'next/font/google'
 import Button from '@/components/Button'
 import HeroSection from '@/components/HeroSection'
 import Reveal from '@/components/Reveal'
 import Link from 'next/link'
 import CreationCard from '@/components/CreationCard'
+import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
 
 const work = () => {
+
+	const [creations, setCreations] = useState([])
+	useEffect(() => {
+		axios("https://huckster-backend.vercel.app/get-creation", {
+			method: "GET"
+		})
+			.then((res) => {
+				setCreations(res.data.response)
+			})
+	}, [])
+
 	return (
 		<Layout>
 			{/* <div className='pt-32'>
@@ -23,11 +35,12 @@ const work = () => {
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 lg:grid hidden lg:gap-16 gap-5'>
 				{/* <Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-full gradientText ' + syne.className}>CREATIONS</h1></Reveal> */}
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
-					<div className='w-full grid lg:grid-cols-12 grid-cols-1 gap-3'>
-						<CreationCard className={"lg:col-span-12"} />
-						<CreationCard className={"lg:col-span-6"} />
-						<CreationCard className={"lg:col-span-6"} />
-						<CreationCard className={"lg:col-span-12"} />
+					<div className='w-full grid lg:grid-cols-12 grid-cols-1'>
+						{
+							creations?.map((value, index) => {
+								return value?.display && <CreationCard data={value} className={index === 0 || index%3 === 0 ? "lg:col-span-12" : "lg:col-span-6"} />
+							})
+						}
 						{/* <Link href={'/creation'} className='group/creation lg:col-span-8 cols-span-1 h-96 overflow-hidden duration-150 rounded-3xl relative border border-white/30 '>
 							<img className='object-center h-full w-full object-cover' src='https://d135u4jtzauizi.cloudfront.net/DS_NEWSBLAST_GIF03_larger.gif' />
 							<div className='p-6 h-full w-full bg-gradient-to-b flex flex-col justify-end from-black/80 via-black/10 to-black/30 group-hover/creation:bg-black/50 absolute top-0 left-0'>
@@ -54,8 +67,8 @@ const work = () => {
 						</div> */}
 					</div>
 					<div className="w-full flex justify-end">
-					<Button className={"w-48"} text={"Watch More"} />
-						</div>
+						<Button className={"w-48"} text={"Watch More"} />
+					</div>
 				</div>
 			</div>
 

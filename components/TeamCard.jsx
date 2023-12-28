@@ -27,20 +27,10 @@ const TeamCard = ({value}) => {
             animationDelay: "900ms"
           }
         }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-483px] h-[483px] w-full bg-black/30 backdrop-blur-lg z-[100]'>
+        {/* }} initial={"hidden"} animate={control} className='transition-all absolute left-0 top-[-483px] h-[483px] w-full bg-black/30 backdrop-blur-lg z-[100] team-gradient-radial mix-blend-color'> */}
         <Reveal>
           <div className='flex flex-col items-start p-4'>
-            <p className={'text-start text-lg pb-2 ' + inter.className}>{value?.description} </p>
-            {/* <h1 className={'font-bold ' + syne.className}>Roles and Films:</h1>
-            <ul  className={'flex flex-col items-start text-sm text-start pb-2 ' + inter.className}>
-              <li>Camera & Electrical, Costume Designer - 'Not Born Heroes' (2010)</li>
-              <li>Producer - 'Peacock' (2008)</li>
-              <li>Writer & Director - 'Kalki' (2019)</li>
-              <li>Writer & Director - 'Ula' (Current Project)</li>
-              <li>Screenplay - 'Gandharva Jr.' (Upcoming)</li>
-              <li>Assistant Director - 'Theevandi' (2018)</li>
-              <li>Assistant Director - 'Second Show' (2012)</li>
-              <li>Assistant Director - 'Little Miss Rawther' (2023)</li>
-            </ul> */}
+            <p className={'custom text-start pb-2 ' + inter.className} dangerouslySetInnerHTML={{__html: value?.description}}></p>
           </div>
         </Reveal>
       </motion.div>
