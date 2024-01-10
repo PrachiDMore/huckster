@@ -4,8 +4,10 @@ import React, { useState } from 'react'
 import { Inter, Syne } from 'next/font/google'
 import Button from '@/components/Button'
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from 'react-icons/hi'
+import { IoArrowForward } from 'react-icons/io5'
 import axios from 'axios'
 import { toast } from 'sonner'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = Syne({ subsets: ['latin'] })
@@ -50,7 +52,27 @@ const ContactUs = () => {
   }
   return (
     <Layout>
-      <HeroSection img={"https://framerusercontent.com/images/KihLgob1Ul5Qa1HTTyAzAljcyI.jpg"} heading={'Contact Us'} />
+
+      <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 mt-20 flex flex-col gap-10 justify-end items-end '>
+        <p className={'text-[150px] py-10 pb-16 ' + syne.className}>HIT US UP</p>
+        <div className='w-full flex justify-center gap-10'>
+          <p className='text-xl'>New Business</p>
+          <p className='text-xl'>Careers</p>
+          <p className='text-xl'>Press</p>
+        </div>
+      </div>
+      <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 flex flex-col gap-3 items-center '>
+        <h1 className={'text-2xl font-semibold ' + syne.className}>WORK WITH US</h1>
+        <p>Explore exciting opportunities to join our team!</p>
+        <div className='flex items-center gap-3'>
+          <p className='font-semibold'>Join us</p>
+          <Link href={'/careers'} className='border border-white hover:bg-white hover:text-black duration-300 cursor-pointer p-2 rounded-full'>
+            <IoArrowForward />
+          </Link>
+        </div>
+      </div>
+
+      {/* <HeroSection img={"https://framerusercontent.com/images/KihLgob1Ul5Qa1HTTyAzAljcyI.jpg"} heading={'Contact Us'} />
       <div className='w-screen lg:px-28 px-5 lg:py-20 py-10'>
         <div className='border border-white/50  lg:flex grid gap-7 lg:p-8 p-4 bg-white/10'>
           <div className='lg:w-2/5 w-full'>
@@ -80,7 +102,7 @@ const ContactUs = () => {
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
 
     </Layout>
   )
