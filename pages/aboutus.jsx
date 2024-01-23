@@ -29,12 +29,16 @@ const Aboutus = () => {
 
   const [teams, setTeams] = useState([])
   useEffect(() => {
-    axios("https://huckster-backend.vercel.app/get-team", {
-      method: "GET"
-    })
-      .then((res) => {
-        setTeams(res.data.response)
+    try {
+      axios("https://huckster-backend.vercel.app/get-team", {
+        method: "GET"
       })
+        .then((res) => {
+          setTeams(res.data.response)
+        })
+    } catch (error) {
+
+    }
   }, [])
 
   return (
@@ -55,7 +59,7 @@ const Aboutus = () => {
       {/* mobile view */}
       <div className='px-5 py-10 w-screen flex flex-col items-center justify-center gap-5 lg:hidden'>
         <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 text-2xl font-semibold text-white pb-5 ' + syne.className}>At the forefront of innovation to shape a future where extraordinary becomes the norm.</h1>
-        <img className=' w-full rounded-xl' src="/assets/about.png" alt="" />
+        {/* <img className=' w-full rounded-xl' src="/assets/about.png" alt="" /> */}
         <div className=''>
           <p className={'text-lg pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
         </div>

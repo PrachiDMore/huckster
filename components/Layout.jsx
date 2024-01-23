@@ -23,8 +23,8 @@ const Layout = ({ children, className }) => {
       <Navbar />
       {children}
       <Footer />
-      <div className={ cookie ? 'px-7 py-5 flex gap-5 z-[5000] items-center bg-white text-black fixed bottom-0 right-0 ' : 'hidden'}>
-        <p className='w-60'>By continuing to use our site, you're saying you're okay with our Cookies Policy.</p>
+      <div className={ cookie ? 'px-7 py-5 flex lg:flex-row flex-col gap-5 z-[5000] items-center bg-white text-black fixed bottom-0 right-0 ' : 'hidden'}>
+        <p className='lg:w-60'>By continuing to use our site, you're saying you're okay with our Cookies Policy.</p>
         <div className='flex items-center gap-3'>
           <p className='font-semibold'>Fine by me</p>
           <div onClick={() => {

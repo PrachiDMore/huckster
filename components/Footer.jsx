@@ -38,7 +38,7 @@ const Footer = () => {
                 <BsYoutube className='lg:text-xl ' />
               </Link>
             </div>
-            <div className='flex justify-between mt-5'>
+            <div className='flex lg:flex-row flex-col justify-between mt-5'>
               <p className='font-medium text-sm text-white/50 hover:text-white/70 duration-200'>Terms & Conditions</p>
               <p className='font-medium text-sm text-white/50 hover:text-white/70 duration-200'>Privacy Policy</p>
               <p className='font-medium text-sm text-white/50 hover:text-white/70 duration-200'>Cookies Policy</p>
@@ -66,7 +66,7 @@ const Footer = () => {
             </div> */}
           </div>
 
-          <div className='w-[25%] flex flex-col gap-3'>
+          <div className='lg:w-[25%] w-full flex flex-col gap-3'>
             <div className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
               <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Join our mail list...</p>
               <div className='text-accentolive'><IoArrowForward /></div>
@@ -100,8 +100,8 @@ const Footer = () => {
           </div> */}
         </div>
         <div className='bg-white/50 w-full h-[1px]'></div>
-        <div className='text-center flex justify-between items-center'>
-          <p className='opacity-0 pointer-events-none bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 flex justify-center items-center rounded-full'><MdOutlineFileDownload /></p>
+        <div className='text-center flex lg:flex-row flex-col justify-between items-center'>
+          <p className='hidden opacity-0 pointer-events-none bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 lg:flex justify-center items-center rounded-full'><MdOutlineFileDownload /></p>
           <p>© {new Date().getFullYear()} Huckster Productions. All Rights Reserved.</p>
           <a href='https://mag.wcoomd.org/uploads/2018/05/blank.pdf' target='_blank' className='bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 flex justify-center items-center rounded-full'><MdOutlineFileDownload /></a>
         </div>
