@@ -1,7 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import Layout from '@/components/Layout'
 import React, { useState } from 'react'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 import Button from '@/components/Button'
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from 'react-icons/hi'
 import { IoArrowForward } from 'react-icons/io5'
@@ -10,7 +10,7 @@ import { toast } from 'sonner'
 import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const ContactUs = () => {
 
@@ -72,14 +72,14 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* <HeroSection img={"https://framerusercontent.com/images/KihLgob1Ul5Qa1HTTyAzAljcyI.jpg"} heading={'Contact Us'} />
+      {/* <HeroSection img={"https://framerusercontent.com/images/KihLgob1Ul5Qa1HTTyAzAljcyI.jpg"} heading={'Contact Us'} /> */}
       <div className='w-screen lg:px-28 px-5 lg:py-20 py-10'>
         <div className='border border-white/50  lg:flex grid gap-7 lg:p-8 p-4 bg-white/10'>
           <div className='lg:w-2/5 w-full'>
             <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-2xl font-semibold text-white pb-5 ' + syne.className}>Vist Us</h1>
             <div className='flex gap-3'>
               <HiOutlineLocationMarker className='text-lg' />
-              <p className={'lg:text-lg' + inter.className}>#2513, Churchill Executive Towers, Business Bay, Dubai, UAE</p>
+              <p className={'lg:text-lg' + inter.className}>Office 2513, Churchill Executive Towers, Business Bay, Dubai, UAE</p>
             </div>
             <div className='flex gap-3 mt-3 items-center'>
               <HiOutlineMail className='text-lg' />
@@ -87,7 +87,11 @@ const ContactUs = () => {
             </div>
             <div className='flex gap-3 mt-3 items-center'>
               <HiOutlinePhone className='text-lg' />
-              <p className={'lg:text-lg' + inter.className}>+971 56 398 2363</p>
+              <a href='tel:+97145839003' className={'lg:text-lg' + inter.className}>+971 4583 9003</a>
+            </div>
+            <div className='flex gap-3 mt-3 items-center'>
+              <HiOutlinePhone className='text-lg' />
+              <a href='tel:+971565402121' className={'lg:text-lg' + inter.className}>+971 56 540 2121</a>
             </div>
           </div>
           <form onSubmit={handleSubmit} className=' lg:w-3/5 w-full'>
@@ -102,7 +106,7 @@ const ContactUs = () => {
             </div>
           </form>
         </div>
-      </div> */}
+      </div>
 
     </Layout>
   )

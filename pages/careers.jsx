@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout'
 import React from 'react'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const inter = DM_Sans({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const Careers = () => {
   return (

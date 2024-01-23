@@ -1,4 +1,4 @@
-import { Syne } from "next/font/google";
+import { DM_Sans, Syne } from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -7,7 +7,7 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { motion, useAnimation } from "framer-motion";
 import { RxCross2 } from "react-icons/rx";
 
-const syne = Syne({ subsets: ["latin"] });
+const syne = DM_Sans({ subsets: ["latin"] });
 
 const Navbar = () => {
   const router = useRouter();

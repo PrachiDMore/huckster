@@ -1,10 +1,10 @@
 import React from 'react'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 import { motion, useAnimation } from 'framer-motion';
 import Reveal from './Reveal';
 
-const syne = Syne({ subsets: ['latin'] })
-const inter = Inter({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
+const inter = DM_Sans({ subsets: ['latin'] })
 
 const TeamCard = ({value}) => {
   const control = useAnimation();

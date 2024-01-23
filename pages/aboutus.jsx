@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout'
 import React, { useEffect, useState } from 'react'
-import { Inter, Syne, Nunito, Quicksand } from 'next/font/google'
+import { Inter, Syne, Nunito, Quicksand, DM_Sans } from 'next/font/google'
 import TeamCard from '@/components/TeamCard'
 import HeroSection from '@/components/HeroSection'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,8 +8,8 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import axios from 'axios'
 
-const syne = Syne({ subsets: ['latin'] })
-const quicksand = Quicksand({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
+const quicksand = DM_Sans({ subsets: ['latin'] })
 
 const Aboutus = () => {
   const breakpoints = {
@@ -49,7 +49,7 @@ const Aboutus = () => {
             <p className={'pb-3 ' + quicksand.className}>At the house of Huckster, we stand at the crossroads of artistic vision and sustainability, captivating stories that resonate with audiences across all cultures. How we do that is through narrative driven approach, combined with a keen-eye for detail. What further blends time-honored cinematic traditions with cutting-edge technology is our commitment to carbon-negative initiatives. Anchored by a team of seasoned professionals, we are dedicated to shaping the future of media, one exceptional story at a time.</p>
           </div>
         </div>
-        <img className=' w-[30%] h-1/2 ' src="/assets/about.png" alt="" />
+        {/* <img className=' w-[30%] h-1/2 ' src="/assets/about.png" alt="" /> */}
       </div>
 
       {/* mobile view */}

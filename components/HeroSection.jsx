@@ -1,10 +1,10 @@
 import React from 'react'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 import { motion } from "framer-motion";
 import SlideReveal from './SlideReveal';
 
-const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const inter = DM_Sans({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const HeroSection = ({ heading, para, img }) => {
   return (

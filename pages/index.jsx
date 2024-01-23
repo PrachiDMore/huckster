@@ -1,4 +1,4 @@
-import { Syne } from 'next/font/google'
+import { DM_Sans, Syne } from 'next/font/google'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 import { useState } from 'react'
@@ -6,15 +6,16 @@ import Button from '@/components/Button'
 import Dropdown from '@/components/Dropdown'
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
+import "swiper/css/navigation";
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import SlideReveal from '@/components/SlideReveal'
 import CreationCard from '@/components/CreationCard'
 import { twMerge } from 'tailwind-merge'
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
-
-const syne = Syne({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 export default function Home() {
 	const [index, setIndex] = useState(0)
@@ -184,36 +185,35 @@ export default function Home() {
 			<div className='w-full lg:py-20 py-10 lg:px-28 px-5 flex flex-col justify-center items-center'>
 				<p className={'lg:text-7xl text-2xl font-semibold text-left gradientText ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 
-				<div className='lg:mt-20 mt-10 w-full lg:mx-28 mx-5'>
-					<div class="card-container ">
-						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></div>
-						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></div>
-						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></div>
-						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></div>
-						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></div>
-						<div class="card"><img className='h-full w-full p-5 object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></div>
-					</div>
-
-					{/* <Swiper className='m-auto w-full h-full'
+				<div className='relative lg:mt-20 mt-10 w-full lg:mx-28 mx-5'>
+					<button class="absolute top-1/2 -translate-y-1/2 -translate-x-full arrow-left z-50 bg-white lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+						<FaArrowLeft className='text-black' />
+					</button>
+					<Swiper className='m-auto w-full h-full'
 						grabCursor={true}
 						loop={true}
 						breakpoints={breakpoints}
 						freeMode={true}
-						modules={[Autoplay]}
+						modules={[Autoplay, Navigation]}
 						autoplay={{
 							delay: 2000
 						}}
+						navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
 					>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl bg-white/20 border border-white/40 p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-					</Swiper> */}
+						<SwiperSlide className='rounded-3xl p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5  overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
+						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+					</Swiper>
+
+					<button class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full z-50 arrow-right bg-white lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+						<FaArrowRight className='text-black'/>
+					</button>
 				</div>
 			</div>
 
@@ -228,7 +228,7 @@ export default function Home() {
 			</div>
 
 			<div className='scroll-text-container w-full lg:py-28 py-14 px-5'>
-				<p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}>Let's create <span className='text-accentorange'>Together!</span></p>
+				<p className={'lg:text-[150px] text-4xl font-semibold text-center scroll-text uppercase ' + syne.className}>Let's <span className='text-accentorange'>create</span> Together!</p>
 			</div>
 
 		</Layout>

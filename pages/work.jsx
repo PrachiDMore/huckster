@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout'
 import React, { useEffect, useState } from 'react'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 import Button from '@/components/Button'
 import HeroSection from '@/components/HeroSection'
 import Reveal from '@/components/Reveal'
@@ -9,7 +9,7 @@ import CreationCard from '@/components/CreationCard'
 import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const work = () => {
 

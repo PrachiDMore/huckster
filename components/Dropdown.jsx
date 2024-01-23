@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BsArrowUp, BsArrowDown } from 'react-icons/bs'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const Dropdown = ({ number, title, subtitle, list = [] }) => {
   const [isOpen, setIsOpen] = useState(false)

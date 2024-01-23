@@ -4,10 +4,10 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { IoArrowForward } from 'react-icons/io5'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const inter = DM_Sans({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const Layout = ({ children, className }) => {
 

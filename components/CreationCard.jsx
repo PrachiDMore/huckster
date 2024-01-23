@@ -1,8 +1,8 @@
-import { Syne } from 'next/font/google'
+import { DM_Sans, Syne } from 'next/font/google'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-const syne = Syne({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const CreationCard = ({className, data}) => {
 	const [play, setPlay] = useState(false)

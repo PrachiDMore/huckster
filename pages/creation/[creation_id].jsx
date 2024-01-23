@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Inter, Syne } from "next/font/google";
+import { DM_Sans, Inter, Syne } from "next/font/google";
 import VideoPlayer from "@/components/Video";
 import videojs from "video.js";
 import Reveal from "@/components/Reveal";
@@ -11,8 +11,8 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useState } from "react";
 import CreationCard from "@/components/CreationCard";
-const inter = Inter({ subsets: ["latin"] });
-const syne = Syne({ subsets: ["latin"] });
+const inter = DM_Sans({ subsets: ["latin"] });
+const syne = DM_Sans({ subsets: ["latin"] });
 
 const breakpoints = {
   1024: {

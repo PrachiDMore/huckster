@@ -2,13 +2,14 @@ import React from 'react'
 import { BsTwitter, BsInstagram, BsYoutube } from 'react-icons/bs'
 import { BiLogoLinkedin } from 'react-icons/bi'
 import { FaFacebookF, FaTiktok } from 'react-icons/fa'
-import { Inter, Syne } from 'next/font/google'
+import { DM_Sans, Inter, Syne } from 'next/font/google'
 import Link from 'next/link'
 import { IoArrowForward } from "react-icons/io5"
+import { MdOutlineFileDownload } from "react-icons/md";
 import Button from './Button'
 
-const inter = Inter({ subsets: ['latin'] })
-const syne = Syne({ subsets: ['latin'] })
+const inter = DM_Sans({ subsets: ['latin'] })
+const syne = DM_Sans({ subsets: ['latin'] })
 
 const Footer = () => {
   return (
@@ -99,8 +100,10 @@ const Footer = () => {
           </div> */}
         </div>
         <div className='bg-white/50 w-full h-[1px]'></div>
-        <div className='text-center'>
-          © 2023 Huckster Productions. All Rights Reserved.
+        <div className='text-center flex justify-between items-center'>
+          <p className='opacity-0 pointer-events-none bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 flex justify-center items-center rounded-full'><MdOutlineFileDownload /></p>
+          <p>© {new Date().getFullYear()} Huckster Productions. All Rights Reserved.</p>
+          <a href='https://mag.wcoomd.org/uploads/2018/05/blank.pdf' target='_blank' className='bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 flex justify-center items-center rounded-full'><MdOutlineFileDownload /></a>
         </div>
       </div>
     </div>
