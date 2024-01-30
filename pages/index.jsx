@@ -1,7 +1,7 @@
 import { DM_Sans, Syne } from 'next/font/google'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from '@/components/Button'
 import Dropdown from '@/components/Dropdown'
 import 'swiper/css';
@@ -14,11 +14,30 @@ import SlideReveal from '@/components/SlideReveal'
 import CreationCard from '@/components/CreationCard'
 import { twMerge } from 'tailwind-merge'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import axios from 'axios'
 
 const syne = DM_Sans({ subsets: ['latin'] })
 
 export default function Home() {
-	const [index, setIndex] = useState(0)
+	const [index, setIndex] = useState(0);
+	const [logos, setLogos] = useState([])
+	const [creations, setCreations] = useState([])
+
+	useEffect(() => {
+		axios("https://huckster-backend.vercel.app/get-creation")
+			.then((res) => {
+				setCreations(res.data.response == undefined ? [] : res.data.response)
+			}).catch((err) => {
+
+			})
+		axios("https://huckster-backend.vercel.app/get-client-logo")
+			.then((res) => {
+				setLogos(res.data.response == undefined ? [] : res.data.response)
+			})
+			.catch((err) => {
+
+			})
+	}, [])
 
 	const handleHoverColors = () => {
 		const random = Math.random() * 100;
@@ -59,16 +78,26 @@ export default function Home() {
 		<Layout>
 			{/* hero section */}
 			<section className='relative h-screen w-screen bg-black' >
-				<Image className={index === 0 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/A24_PRISCILLA_A24_GIF03.gif" alt="" />
-				<Image className={index === 1 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[1] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[1] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/The-Curse-Trailer-Full-16x9-No-Captions_SITE-GIF.gif" alt="" />
-				<Image className={index === 2 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[2] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/DS_NEWSBLAST_GIF03_larger.gif" alt="" />
-				<Image className={index === 3 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[3] opacity-0 duration-500'} width={100} height={100} src="https://d135u4jtzauizi.cloudfront.net/TIC_GIF_02_A24.gif" alt="" />
+				{
+					creations?.slice(0, 4)?.filter((value) => {
+						return value?.display
+					})?.sort((a, b) => {
+						return a.index - b.index
+					})?.map((value, int) => {
+						return <video controls={false} autoPlay muted loop className={index === int ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src={value?.videoURL} alt="" />
+					})
+				}
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
 				<div className={'gap-3 flex flex-col justify-end lg:py-14 py-20 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-radial from-transparent to-black ' + syne.className}>
-					<SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(0) }} className={twMerge(index === 0 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Reel 2022</h1></SlideReveal>
-					<SlideReveal delay={0.5}><h1 onMouseEnter={() => { setIndex(1) }} className={twMerge(index === 1 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Treated by Experts</h1></SlideReveal>
-					<SlideReveal delay={0.8}><h1 onMouseEnter={() => { setIndex(2) }} className={twMerge(index === 2 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Grooming Aspirations</h1></SlideReveal>
-					<SlideReveal delay={1.1}><h1 onMouseEnter={() => { setIndex(3) }} className={twMerge(index === 3 ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>Mid-Year Sale</h1></SlideReveal>
+					{
+						creations?.slice(0, 4)?.filter((value) => {
+							return value?.display
+						})?.sort((a, b) => {
+							return a.index - b.index
+						})?.map((value, int) => {
+							return <SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(int) }} className={twMerge(index === int ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>{value?.title}</h1></SlideReveal>
+						})
+					}
 				</div>
 			</section>
 
@@ -87,10 +116,13 @@ export default function Home() {
 				<Reveal><h1 className={'lg:text-8xl text-3xl font-semibold w-max gradientText ' + syne.className}>CREATIONS</h1></Reveal>
 				<div className='w-full flex flex-col items-center lg:gap-10 gap-7'>
 					<div className='w-full grid lg:grid-cols-12 grid-cols-1 '>
-						<CreationCard className={"lg:col-span-12"} />
-						<CreationCard className={"lg:col-span-6"} />
-						<CreationCard className={"lg:col-span-6"} />
-						<CreationCard className={"lg:col-span-12"} />
+						{
+							creations?.slice(0, 4)?.filter((value) => {
+								return value?.display
+							})?.map((value, index) => {
+								return <CreationCard data={value} className={index === 0 || index%3 === 0 ? "lg:col-span-12" : "lg:col-span-6"} />
+							})
+						}
 					</div>
 					<div className='w-full flex justify-end items-end'>
 						<Link href={'/work'}><Button className={"w-48"} text={"Watch More"} /></Link>
@@ -148,17 +180,17 @@ export default function Home() {
 						<Reveal delay={0}>
 							<p style={{
 								WebkitTextStroke: "1px white"
-							}} className='text-transparent lg:text-9xl text-4xl font-medium'>VISUAL.</p>
+							}} className='lg:text-9xl text-4xl font-medium'>VISUAL.</p>
 						</Reveal>
 						<Reveal delay={0.1}>
 							<p style={{
 								WebkitTextStroke: "1px white"
-							}} className='text-transparent lg:text-9xl text-4xl font-medium'>NARRATIVE.</p>
+							}} className='lg:text-9xl text-4xl font-medium'>NARRATIVE.</p>
 						</Reveal>
 						<Reveal delay={0.2}>
 							<p style={{
 								WebkitTextStroke: "1px white"
-							}} className='text-transparent lg:text-9xl text-4xl font-medium'>CAPTIVATING.</p>
+							}} className='lg:text-9xl text-4xl font-medium'>CAPTIVATING.</p>
 						</Reveal>
 					</div>
 				</div>
@@ -200,15 +232,11 @@ export default function Home() {
 						}}
 						navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
 					>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-1.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-2.png" alt="" /></SwiperSlide>
-						<SwiperSlide className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src="/assets/brands-logo-3.png" alt="" /></SwiperSlide>
+						{
+							logos.map((logo, index) => {
+								return <SwiperSlide key={index} className='rounded-3xl p-5 overflow-hidden h-full w-full flex justify-center items-center'><img className='h-full w-full object-contain aspect-square' src={logo?.logoURL} alt="" /></SwiperSlide>
+							})
+						}
 					</Swiper>
 
 					<button class="lg:flex hidden absolute top-1/2 -translate-y-1/2 right-0 translate-x-full z-50 arrow-right bg-white lg:-mr-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">

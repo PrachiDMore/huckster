@@ -14,8 +14,7 @@ const Layout = ({ children, className }) => {
   const [cookie, setCookie] = useState(true)
 
   useEffect(() => {
-    setCookie(localStorage.getItem("consent") === null ? true : Boolean(localStorage.getItem("consent")))
-    console.log(localStorage.getItem("consent") === null ? true : Boolean(localStorage.getItem("consent")) )
+    setCookie(localStorage.getItem("consent") === null || localStorage.getItem("consent") == "true" ? true : false )
   }, [])
 
   return (

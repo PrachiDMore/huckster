@@ -7,11 +7,11 @@ import { DM_Sans, Inter, Syne } from 'next/font/google'
 const inter = DM_Sans({ subsets: ['latin'] })
 const syne = DM_Sans({ subsets: ['latin'] })
 
-const mediadetails = () => {
+const Mediadetails = () => {
   return (
     <Layout>
       <section className='w-screen h-screen relative'>
-        <img className='w-screen h-[90%] object-cover' src="/assets/work.webp" alt="" />
+        <video autoPlay className='w-screen h-screen object-cover' src={"https://res.cloudinary.com/dqmd9dypv/video/upload/v1706347585/rqbdbyeemgpu0g9eprol.mp4"} alt="" />
         <div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
         <div className='gap-3 flex flex-col justify-center py-14 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-to-b to-transparent from-black ' ></div>
       </section>
@@ -42,4 +42,4 @@ const mediadetails = () => {
   )
 }
 
-export default mediadetails
+export default Mediadetails

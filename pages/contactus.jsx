@@ -17,7 +17,8 @@ const ContactUs = () => {
   const initialState = {
     name: "",
     email: "",
-    message: ""
+    message: "",
+    phoneNo: ""
   }
   const [formState, setFormState] = useState(initialState);
 
@@ -36,6 +37,7 @@ const ContactUs = () => {
         name: formState.name,
         email: formState.email,
         message: formState.message,
+        phoneNo: formState.phoneNo,
       }
     })
       .then((res) => {
@@ -90,6 +92,7 @@ const ContactUs = () => {
                 <input value={formState.name} required id='name' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4 py-3 w-full' type="text" placeholder='Enter your Name' />
                 <input value={formState.email} required id='email' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="email" placeholder='Enter your Email' />
               </div>
+                <input value={formState.phoneNo} required id='phoneNo' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="text" placeholder='Enter your Phone Number' />
               <textarea value={formState.message} required id='message' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20  lg:px-7 px-4  py-3 w-full h-40 resize-none' type="text" placeholder='Write message...' />
               <Button type='submit' text={'Send Message'} className={'w-full'} />
             </div>
