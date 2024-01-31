@@ -22,6 +22,7 @@ export default function Home() {
 	const [index, setIndex] = useState(0);
 	const [logos, setLogos] = useState([])
 	const [creations, setCreations] = useState([])
+	const [services, setServices] = useState([])
 
 	useEffect(() => {
 		axios("https://huckster-backend.vercel.app/get-creation")
@@ -33,6 +34,13 @@ export default function Home() {
 		axios("https://huckster-backend.vercel.app/get-client-logo")
 			.then((res) => {
 				setLogos(res.data.response == undefined ? [] : res.data.response)
+			})
+			.catch((err) => {
+
+			})
+		axios("https://huckster-backend.vercel.app/get-services")
+			.then((res) => {
+				setServices(res.data.response == undefined ? [] : res.data.response)
 			})
 			.catch((err) => {
 
@@ -120,7 +128,7 @@ export default function Home() {
 							creations?.slice(0, 4)?.filter((value) => {
 								return value?.display
 							})?.map((value, index) => {
-								return <CreationCard data={value} className={index === 0 || index%3 === 0 ? "lg:col-span-12" : "lg:col-span-6"} />
+								return <CreationCard data={value} className={index === 0 || index % 3 === 0 ? "lg:col-span-12" : "lg:col-span-6"} />
 							})
 						}
 					</div>
@@ -204,11 +212,19 @@ export default function Home() {
 					<p className={'lg:text-2xl text-lg font-medium ' + syne.className}>'Cause we like to get straight to the point</p>
 				</div>
 
-				<div className={'lg:w-9/12 w-full flex flex-col items-end justify-end lg:gap-10 gap-10 ' + syne.className}>
-					<Dropdown number={'01'} title={'Design'} list={["Concept", "Script", "Storyboarding and Pre-Visuals"]} subtitle={'The story begins'} />
-					<Dropdown number={'02'} title={'Pre-Production'} list={["Technical Recce", "Casting", "Location Scouting", "Permissions"]} subtitle={'The characters are introduced'} />
-					<Dropdown number={'03'} title={'Production'} list={["Award Winning Artisans", "Advanced Equipments and Technology"]} subtitle={'The main story hook'} />
-					<Dropdown number={'04'} title={'Post-Production'} list={["VFX & VR ", "Music & Sound Design", "Color Grading", "Multi-Platform Masterting & Delivery"]} subtitle={'The climax'} />
+				<div className={'lg:w-9/12 w-full flex flex-col items-end justify-end lg:gap-10 gap-10 mt-4 ' + syne.className}>
+					{
+						services?.sort((a, b) => {
+							return a.index - b.index
+						})?.map((service, index) => {
+							return <Dropdown number={(index + 1) < 9 ? `0${index + 1}` : `${index + 1}`} title={service?.service} list={service?.subServices?.sort((a, b) => {
+								return a.index - b.index
+							})?.map((subservice) => {
+								return 	subservice.subService
+							})} subtitle={service?.description} />
+						})
+					}
+					{/* <Dropdown number={'04'} title={'Post-Production'} list={["VFX & VR ", "Music & Sound Design", "Color Grading", "Multi-Platform Masterting & Delivery"]} subtitle={'The climax'} /> */}
 				</div>
 
 			</div>
