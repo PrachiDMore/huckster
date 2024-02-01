@@ -10,6 +10,7 @@ import { IoArrowForward } from "react-icons/io5"
 import { MdOutlineFileDownload } from "react-icons/md";
 import Button from './Button'
 import axios from 'axios'
+import { toast } from 'sonner';
 
 const inter = DM_Sans({ subsets: ['latin'] })
 const syne = DM_Sans({ subsets: ['latin'] })
@@ -17,6 +18,7 @@ const syne = DM_Sans({ subsets: ['latin'] })
 const Footer = () => {
   const [socials, setSocials] = useState([]);
   const [text, setText] = useState("");
+  const [email, setEmail] = useState("");
   useEffect(() => {
     axios('https://huckster-backend.vercel.app/get-social-media')
       .then((res) => {
@@ -27,6 +29,30 @@ const Footer = () => {
         setText(res.data.response[[0]].companyPDF)
       })
   }, [])
+
+  const handleMail =() => {
+    try {
+      if(email.length < 3){
+        toast.error("Length should be more than 3 characters!")
+      }else{
+        axios("https://huckster-backend.vercel.app/post-mail", {
+          method: "POST",
+          data: {
+            email
+          }
+        })
+        .then((res) => {
+          toast.success(res.data.message)
+          setEmail("")
+        })
+        .catch((err) => {
+          toast.error(err.message)
+        })
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
 
   return (
     <div className={'w-full border-white/70 border-t-[1px] ' + inter.className}>
@@ -56,8 +82,9 @@ const Footer = () => {
 
           <div className='lg:w-[25%] w-full flex flex-col gap-3'>
             <div className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
-              <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Join our mail list...</p>
-              <div className='text-accentolive'><IoArrowForward /></div>
+              {/* <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Join our mail list...</p> */}
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full bg-transparent outline-none' placeholder='Join our mail list...'/>
+              <div onClick={handleMail} className='text-accentolive cursor-pointer'><IoArrowForward /></div>
             </div>
             <Link href={"/careers"} className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
               <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Want to work with us?</p>

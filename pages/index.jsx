@@ -234,7 +234,7 @@ export default function Home() {
 				<p className={'lg:text-7xl text-2xl font-semibold text-left gradientText ' + syne.className}>A PRODUCTION HOUSE THAT ENVISIONS BRIDGING TIME ACROSS CULTURES</p>
 
 				<div className='relative lg:mt-20 mt-10 w-full lg:mx-28 mx-5'>
-					<button class="lg:flex hidden absolute top-1/2 -translate-y-1/2 -translate-x-full arrow-left z-50 bg-white lg:-ml-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+					<button className="lg:flex hidden absolute top-1/2 -translate-y-1/2 -translate-x-full arrow-left z-50 bg-white lg:-ml-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
 						<FaArrowLeft className='text-black' />
 					</button>
 					<Swiper className='m-auto w-full h-full'
@@ -255,15 +255,15 @@ export default function Home() {
 						}
 					</Swiper>
 
-					<button class="lg:flex hidden absolute top-1/2 -translate-y-1/2 right-0 translate-x-full z-50 arrow-right bg-white lg:-mr-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+					<button className="lg:flex hidden absolute top-1/2 -translate-y-1/2 right-0 translate-x-full z-50 arrow-right bg-white lg:-mr-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
 						<FaArrowRight className='text-black' />
 					</button>
 				</div>
 				<div className='flex gap-6 lg:hidden'>
-					<button class="lg:hidden flex arrow-left z-50 bg-white lg:-ml-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+					<button className="lg:hidden flex arrow-left z-50 bg-white lg:-ml-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
 						<FaArrowLeft className='text-black' />
 					</button>
-					<button class="lg:hidden flex z-50 arrow-right bg-white lg:-mr-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+					<button className="lg:hidden flex z-50 arrow-right bg-white lg:-mr-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
 						<FaArrowRight className='text-black' />
 					</button>
 				</div>
