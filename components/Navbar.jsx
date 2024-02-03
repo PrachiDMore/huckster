@@ -59,7 +59,8 @@ const Navbar = () => {
             />
           </Link>
           <div className="flex gap-10">
-            <Link href={"/contactus"} className="lg:block hidden text-xl">wE'Re jUsT A CaLl aWaY</Link>{" "}
+            <Link href={"/contactus"} className="lg:block hidden text-xl">We're just a call away</Link>{" "}
+            {/* <Link href={"/contactus"} className="lg:block hidden text-xl">wE'Re jUsT A CaLl aWaY</Link>{" "} */}
             <div onClick={() => {
               if (show) {
                 control.start("hidden");

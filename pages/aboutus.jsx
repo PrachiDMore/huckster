@@ -96,7 +96,7 @@ const Aboutus = () => {
         </div>
 
         <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
-        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-5xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br /> bEcOmEs tHe nOrM!</p>
+        <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-5xl font-semibold text-left gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
       </div>
 
       {/* desktop view */}

@@ -67,14 +67,14 @@ const ContactUs = () => {
       <div className='w-screen lg:px-28 px-5 lg:py-20 py-10'>
         <div className='border border-white/50  lg:flex grid gap-7 lg:p-8 p-4 bg-white/10'>
           <div className='lg:w-2/5 w-full'>
-            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-2xl font-semibold text-white pb-5 ' + syne.className}>Vist Us</h1>
+            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-2xl font-semibold text-white pb-5 ' + syne.className}>Visit Us</h1>
             <div className='flex gap-3'>
               <HiOutlineLocationMarker className='text-lg' />
               <p className={'lg:text-lg' + inter.className}>Office 2513, Churchill Executive Towers, Business Bay, Dubai, UAE</p>
             </div>
             <div className='flex gap-3 mt-3 items-center'>
               <HiOutlineMail className='text-lg' />
-              <p className={'lg:text-lg' + inter.className}>hola@hucksterproduction.com</p>
+              <a href='mailto:hola@hucksterproduction.com' className={'lg:text-lg' + inter.className}>hola@hucksterproduction.com</a>
             </div>
             <div className='flex gap-3 mt-3 items-center'>
               <HiOutlinePhone className='text-lg' />
@@ -86,14 +86,14 @@ const ContactUs = () => {
             </div>
           </div>
           <form onSubmit={handleSubmit} className=' lg:w-3/5 w-full'>
-            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-3xl text-2xl font-semibold text-white pb-5 ' + syne.className}>Question? Send us a message. Don't be shy</h1>
+            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-2xl font-semibold text-white pb-5 ' + syne.className}>We Appreciate the opportunity to connect with you.</h1>
             <div className='flex flex-col items-center gap-5 w-full '>
               <div className='lg:flex grid gap-5 w-full'>
                 <input value={formState.name} required id='name' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4 py-3 w-full' type="text" placeholder='Enter your Name' />
                 <input value={formState.email} required id='email' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="email" placeholder='Enter your Email' />
               </div>
                 <input value={formState.phoneNo} required id='phoneNo' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="text" placeholder='Enter your Phone Number' />
-              <textarea value={formState.message} required id='message' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20  lg:px-7 px-4  py-3 w-full h-40 resize-none' type="text" placeholder='Write message...' />
+              <textarea value={formState.message} required id='message' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20  lg:px-7 px-4  py-3 w-full h-40 resize-none' type="text" placeholder="We'd love to hear from you!" />
               <Button type='submit' text={'Send Message'} className={'w-full'} />
             </div>
           </form>
