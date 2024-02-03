@@ -5,8 +5,9 @@ import TeamCard from '@/components/TeamCard'
 import HeroSection from '@/components/HeroSection'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import axios from 'axios'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
 const syne = DM_Sans({ subsets: ['latin'] })
 const quicksand = DM_Sans({ subsets: ['latin'] })
@@ -67,23 +68,32 @@ const Aboutus = () => {
 
       <div className='lg:px-28 px-5 w-screen'>
         <h1 className={'mx-auto lg:p-12 py-7 lg:text-6xl text-2xl font-semibold w-full text-center gradientText ' + syne.className}>OUR CREATIVE CULTURE</h1>
-        <Swiper className='m-auto w-full h-full'
-          grabCursor={true}
-          loop={true}
-          breakpoints={breakpoints}
-          spaceBetween={20}
-          slidesPerView={3}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 10000
-          }}
-        >
-          {
-            teams?.map((value, index) => {
-              return value?.display && <SwiperSlide className='' key={index}><TeamCard value={value} /></SwiperSlide>
-            })
-          }
-        </Swiper>
+        <div className='relative'>
+          <button className="lg:flex hidden absolute top-1/2 -translate-y-1/2 -translate-x-full arrow-left z-50 bg-white lg:-ml-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+            <FaArrowLeft className='text-black' />
+          </button>
+          <Swiper className='m-auto w-full h-full'
+            grabCursor={true}
+            loop={true}
+            breakpoints={breakpoints}
+            spaceBetween={20}
+            slidesPerView={3}
+            modules={[Autoplay, Navigation]}
+            autoplay={{
+              delay: 3000
+            }}
+            navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+          >
+            {
+              teams?.map((value, index) => {
+                return value?.display && <SwiperSlide className='' key={index}><TeamCard value={value} /></SwiperSlide>
+              })
+            }
+          </Swiper>
+          <button className="lg:flex hidden absolute top-1/2 -translate-y-1/2 right-0 translate-x-full z-50 arrow-right bg-white lg:-mr-4 justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
+            <FaArrowRight className='text-black' />
+          </button>
+        </div>
 
         <p className={'lg:hidden mx-auto lg:p-12 py-7 w-full lg:text-xl font-semibold text-center gradientText ' + syne.className}>Where EXTRAORDINARY<br /> becomes the norm!</p>
         <p className={'hidden lg:py-12 lg:pl-20 py-7 w-full lg:block lg:text-5xl font-semibold text-left gradientText ' + syne.className}>wHeRe eXtRaOrDiNaRy<br /> bEcOmEs tHe nOrM!</p>
