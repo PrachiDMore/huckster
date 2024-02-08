@@ -49,15 +49,23 @@ export default function Home() {
 
 	const handleHoverColors = () => {
 		const random = Math.random() * 100;
-		if (random < 16.66) {
+		if (random < 10) {
 			return 'hover:text-accentolive';
-		} else if (random > 16.66 && random < 33.32) {
+		} else if (random > 10 && random < 20) {
 			return 'hover:text-accentblue';
-		} else if (random > 33.32 && random < 49.98) {
+		} else if (random > 20 && random < 30) {
 			return 'hover:text-accenttan';
-		} else if (random > 49.98 && random < 66.64) {
+		} else if (random > 30 && random < 40) {
 			return 'hover:text-accentteal';
-		} else if (random > 66.64 && random < 83.3) {
+		} else if (random > 40 && random < 50) {
+			return 'hover:text-accentorange';
+		} else if (random > 50 && random < 60) {
+			return 'hover:text-accentblue';
+		} else if (random > 60 && random < 70) {
+			return 'hover:text-accenttan';
+		} else if (random > 70 && random < 80) {
+			return 'hover:text-accentteal';
+		} else if (random > 80 && random < 90) {
 			return 'hover:text-accentorange';
 		} else {
 			return 'hover:text-accentgray';

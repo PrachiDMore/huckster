@@ -57,7 +57,7 @@ const ContactUs = () => {
 
       <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 mt-20 flex flex-col gap-10 justify-end items-end '>
         <p className={'lg:text-[150px] text-[70px] py-10 pb-16 ' + syne.className}>HIT US UP</p>
-        <div className='w-full lg:flex-row flex-col flex justify-center lg:gap-10 gap-3'>
+        <div className='w-full lg:flex-row flex-col flex justify-start lg:gap-10 gap-3'>
           <p className='text-xl'>New Business</p>
           <p className='text-xl'>Careers</p>
           <p className='text-xl'>Press</p>
@@ -86,7 +86,7 @@ const ContactUs = () => {
             </div>
           </div>
           <form onSubmit={handleSubmit} className=' lg:w-3/5 w-full'>
-            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-2xl font-semibold text-white pb-5 ' + syne.className}>We Appreciate the opportunity to connect with you.</h1>
+            <h1 className={' delay-75 relative top-0 left-0 transition-all ease-in-expo duration-700 lg:text-2xl text-2xl font-semibold text-white pb-5 ' + syne.className}>We appreciate the opportunity to connect with you.</h1>
             <div className='flex flex-col items-center gap-5 w-full '>
               <div className='lg:flex grid gap-5 w-full'>
                 <input value={formState.name} required id='name' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4 py-3 w-full' type="text" placeholder='Enter your Name' />

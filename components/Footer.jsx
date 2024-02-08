@@ -19,6 +19,7 @@ const Footer = () => {
   const [socials, setSocials] = useState([]);
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
+  const [hovered, setHovered] = useState(false);
   useEffect(() => {
     axios('https://huckster-backend.vercel.app/get-social-media')
       .then((res) => {
@@ -30,24 +31,24 @@ const Footer = () => {
       })
   }, [])
 
-  const handleMail =() => {
+  const handleMail = () => {
     try {
-      if(email.length < 3){
+      if (email.length < 3) {
         toast.error("Length should be more than 3 characters!")
-      }else{
+      } else {
         axios("https://huckster-backend.vercel.app/post-mail", {
           method: "POST",
           data: {
             email
           }
         })
-        .then((res) => {
-          toast.success(res.data.message)
-          setEmail("")
-        })
-        .catch((err) => {
-          toast.error(err.message)
-        })
+          .then((res) => {
+            toast.success(res.data.message)
+            setEmail("")
+          })
+          .catch((err) => {
+            toast.error(err.message)
+          })
       }
     } catch (error) {
       toast.error(error.message)
@@ -83,7 +84,7 @@ const Footer = () => {
           <div className='lg:w-[25%] w-full flex flex-col gap-3'>
             <div className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
               {/* <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Join our mail list...</p> */}
-              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full bg-transparent outline-none' placeholder='Join our mail list...'/>
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className='w-full bg-transparent outline-none' placeholder='Join our mail list...' />
               <div onClick={handleMail} className='text-accentolive cursor-pointer'><IoArrowForward /></div>
             </div>
             <Link href={"/careers"} className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
@@ -100,7 +101,10 @@ const Footer = () => {
         <div className='text-center flex lg:flex-row flex-col justify-between items-center'>
           <p className='hidden opacity-0 pointer-events-none bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 lg:flex justify-center items-center rounded-full'><MdOutlineFileDownload /></p>
           <p>© {new Date().getFullYear()} Huckster Productions. All Rights Reserved.</p>
-          <a href={text} target='_blank' className='bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 flex justify-center items-center rounded-full'><MdOutlineFileDownload /></a>
+          <div className='relative'>
+            {hovered && <div className='-top-10 left-1/2 -translate-x-1/2 rounded-md text-xs text-white bg-gray-800 p-2 absolute w-32' >Download Portfolio</div>}
+            <a href={text} onMouseEnter={( ) => {setHovered(true)}} onMouseLeave={( ) => {setHovered(false)}} target='_blank' className='bg-white/10 hover:bg-white/20 duration-300 cursor-pointer h-8 w-8 flex justify-center items-center rounded-full'><MdOutlineFileDownload /></a>
+          </div>
         </div>
       </div>
     </div>
