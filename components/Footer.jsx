@@ -91,7 +91,7 @@ const Footer = () => {
               <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Want to work with us?</p>
               <div className='text-accenttan'><IoArrowForward /></div>
             </Link>
-            <Link href={"contactus"} className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
+            <Link href={"/contactus"} className='w-full flex items-center justify-between border cursor-pointer hover:bg-white/10 duration-300 border-white/50 px-3 py-2'>
               <p className='font-medium  text-white/50 hover:text-white/70 duration-200'>Reach out to us...</p>
               <div className='text-accentteal'><IoArrowForward /></div>
             </Link>
