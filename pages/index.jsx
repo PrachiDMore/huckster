@@ -19,10 +19,11 @@ import axios from 'axios'
 const syne = DM_Sans({ subsets: ['latin'] })
 
 export default function Home() {
-	const [index, setIndex] = useState(0);
+	const [index, setIndex] = useState(-1);
 	const [logos, setLogos] = useState([])
 	const [creations, setCreations] = useState([])
 	const [services, setServices] = useState([])
+	const [banner, setBanner] = useState("")
 
 	useEffect(() => {
 		axios("https://huckster-backend.vercel.app/get-creation")
@@ -41,6 +42,13 @@ export default function Home() {
 		axios("https://huckster-backend.vercel.app/get-services")
 			.then((res) => {
 				setServices(res.data.response == undefined ? [] : res.data.response)
+			})
+			.catch((err) => {
+
+			})
+		axios("https://huckster-backend.vercel.app/get-banner")
+			.then((res) => {
+				setBanner(res.data.response[0].bannerURL == undefined ? [] : res.data.response)
 			})
 			.catch((err) => {
 
@@ -94,6 +102,7 @@ export default function Home() {
 		<Layout>
 			{/* hero section */}
 			<section className='relative h-screen w-screen bg-black' >
+			<video controls={false} autoPlay muted loop className={index === -1 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src={banner} alt="" />
 				{
 					creations?.slice(0, 4)?.filter((value) => {
 						return value?.display

@@ -1,6 +1,6 @@
 import HeroSection from '@/components/HeroSection'
 import Layout from '@/components/Layout'
-import React, { useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { DM_Sans, Inter, Syne } from 'next/font/google'
 import Button from '@/components/Button'
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from 'react-icons/hi'
@@ -8,6 +8,9 @@ import { IoArrowForward } from 'react-icons/io5'
 import axios from 'axios'
 import { toast } from 'sonner'
 import Link from 'next/link'
+import ReCAPTCHA from "react-google-recaptcha"
+import { verifyCaptcha } from "@/components/VerifyCaptcha";
+import { useReCaptcha } from "next-recaptcha-v3";
 
 const inter = Inter({ subsets: ['latin'] })
 const syne = DM_Sans({ subsets: ['latin'] })
@@ -20,7 +23,18 @@ const ContactUs = () => {
     message: "",
     phoneNo: ""
   }
+
   const [formState, setFormState] = useState(initialState);
+  const recaptchaRef = useRef(null)
+  const [isVerified, setIsverified] = useState(false)
+  const { executeRecaptcha } = useReCaptcha();
+
+
+  async function handleCaptchaSubmission(token) {
+    await verifyCaptcha(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false))
+  }
 
   const handleChange = (e) => {
     setFormState({
@@ -29,7 +43,29 @@ const ContactUs = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault()
+      console.log("adasda")
+
+      const token = await executeRecaptcha("form_submit");
+
+      axios("https://huckster-backend.vercel.app/contact-us", {
+        method: "POST",
+        data: {
+          "name": formState.name,
+          "email": formState.email,
+          "message": formState.message,
+          "phoneNo": formState.phoneNo,
+          "token": token
+        },
+      });
+    },
+    [executeRecaptcha, formState.name],
+  );
+
+  const handleSubmi1t = async (e) => {
+    const token = await executeRecaptcha("form_submit");
     e.preventDefault()
     axios("https://huckster-backend.vercel.app/contact-us", {
       method: "POST",
@@ -92,9 +128,16 @@ const ContactUs = () => {
                 <input value={formState.name} required id='name' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4 py-3 w-full' type="text" placeholder='Enter your Name' />
                 <input value={formState.email} required id='email' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="email" placeholder='Enter your Email' />
               </div>
-                <input value={formState.phoneNo} required id='phoneNo' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="text" placeholder='Enter your Phone Number' />
+              <input value={formState.phoneNo} required id='phoneNo' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20 lg:px-7 px-4  py-3 w-full' type="text" placeholder='Enter your Phone Number' />
               <textarea value={formState.message} required id='message' onChange={handleChange} className='outline-none text-lg bg-none bg-white/20  lg:px-7 px-4  py-3 w-full h-40 resize-none' type="text" placeholder="We'd love to hear from you!" />
-              <Button type='submit' text={'Send Message'} className={'w-full'} />
+              {/* <ReCAPTCHA
+                sitekey={"6Leol3MpAAAAAFlYWw4RbCy4V5LwRbBydA6oxLgx"}
+                ref={recaptchaRef}
+                onChange={handleCaptchaSubmission}
+              /> */}
+              <div className={'border border-white/50 p-1  '}>
+                <button type='submit' className='bg-white/20 backdrop-blur-sm hover:bg-white/30 lg:text-base text-sm duration-300 w-full p-3  '>Send Message</button>
+              </div>
             </div>
           </form>
         </div>

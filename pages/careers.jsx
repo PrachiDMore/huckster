@@ -32,7 +32,7 @@ const Careers = () => {
             return job.enable;
           })?.map((job, index) => {
             return <div key={index} className='flex lg:flex-row flex-col lg:gap-7 gap-3'>
-              <video key={index} autoPlay loop src={"https://res.cloudinary.com/dqmd9dypv/video/upload/v1706347585/rqbdbyeemgpu0g9eprol.mp4"} className='lg:h-[45vh] lg:w-[18vw] w-full object-cover' alt="" />
+              <img key={index} src={job?.image} className='lg:h-[45vh] lg:w-[18vw] w-full object-cover' alt="" />
               <div className='flex flex-col'>
                 <h3 className='text-3xl font-bold'>{job?.title}</h3>
                 <h3 className='text-sm mt-3 text-gray-300'>{job?.designation}</h3>
