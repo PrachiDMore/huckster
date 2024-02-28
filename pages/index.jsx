@@ -48,7 +48,7 @@ export default function Home() {
 			})
 		axios("https://huckster-backend.vercel.app/get-banner")
 			.then((res) => {
-				setBanner(res.data.response[0].bannerURL == undefined ? [] : res.data.response)
+				setBanner(res.data.response[0]?.bannerURL)
 			})
 			.catch((err) => {
 

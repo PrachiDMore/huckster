@@ -176,6 +176,13 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#265367", endColorstr="#e67b60", GradientType=1);
 }
 
+.main-gradient {
+  background: rgb(186, 186, 141);
+  background: -moz-linear-gradient(83deg, rgba(186, 186, 141, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(218, 164, 104, 1) 41%, rgba(146, 148, 137, 1) 63%, rgba(38, 83, 103, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  background: -webkit-linear-gradient(83deg, rgba(186, 186, 141, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(218, 164, 104, 1) 41%, rgba(146, 148, 137, 1) 63%, rgba(38, 83, 103, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  background: linear-gradient(83deg, rgba(186, 186, 141, 1) 0%, rgba(152, 197, 210, 1) 19%, rgba(218, 164, 104, 1) 41%, rgba(146, 148, 137, 1) 63%, rgba(38, 83, 103, 1) 84%, rgba(230, 123, 96, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#baba8d", endColorstr="#e67b60", GradientType=1);
+}
 
 .scroll-text-container {
   width: 100%;
@@ -191,6 +198,7 @@ a {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -207,7 +215,7 @@ a {
   height: 200px;
   margin: 1px;
   background-color: #f0f0f0;
- overflow: hidden;
+  overflow: hidden;
 }
 
 @keyframes scrollCards {
