@@ -101,7 +101,7 @@ const Careers = () => {
                   <p className='text-sm mt-3 text-gray-300' dangerouslySetInnerHTML={{ __html: job?.description }}></p>
                   <div className='flex gap-3 mt-4'>
                     <a target='_blank' href={`https://api.whatsapp.com/send?phone=971502628766&text=${job?.title}`} className='h-10 flex justify-center items-center rounded-full w-10 border-white border cursor-pointer hover:bg-white/10 hover:border-transparent duration-150'><BiLogoWhatsapp className='text-lg' /></a>
-                    <a target='_blank' href={`mailto:ali@huckstergroup.com?subject=${job?.title}`} className='h-10 flex justify-center items-center rounded-full w-10 border-white border cursor-pointer hover:bg-white/10 hover:border-transparent duration-150'><BiLogoGmail className='text-lg' /></a>
+                    <a target='_blank' href={`mailto:crew.huckster@gmail.com?subject=${job?.title}`} className='h-10 flex justify-center items-center rounded-full w-10 border-white border cursor-pointer hover:bg-white/10 hover:border-transparent duration-150'><BiLogoGmail className='text-lg' /></a>
                     <span onClick={() => setShow(job._id)} className='h-10 flex justify-center items-center rounded-full w-10 border-white border cursor-pointer hover:bg-white/10 hover:border-transparent duration-150'><BiUpload className='text-lg' /></span>
                   </div>
                 </div>
