@@ -1,4 +1,3 @@
-import { responseTypes } from "@/utils/types";
 import axios from "axios";
 
 const verifyRecaptcha = async token => {
