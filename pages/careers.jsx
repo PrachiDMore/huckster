@@ -9,7 +9,7 @@ import { toast } from 'sonner'
 import { IoClose } from 'react-icons/io5'
 import { FaRegFile } from "react-icons/fa";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from './config'
+import { storage } from '../config'
 
 const inter = DM_Sans({ subsets: ['latin'] })
 const syne = DM_Sans({ subsets: ['latin'] })
