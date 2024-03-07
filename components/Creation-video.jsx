@@ -47,7 +47,6 @@ const VideoSection = () => {
 				height="100%"
 				className="object-cover"
 				loop
-				muted={volume === 0}
 			/>
 
 			<div className="absolute inset-0 flex justify-center items-center">

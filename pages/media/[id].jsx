@@ -27,7 +27,7 @@ const Mediadetails = () => {
   return (
     <Layout>
       <section className='w-screen h-screen relative'>
-        <video key={data?.video} muted autoPlay className='w-screen h-screen object-cover' src={data?.video} loop controls={false} alt="" />
+        <video key={data?.video} autoPlay className='w-screen h-screen object-cover' src={data?.video} loop controls={false} alt="" />
         <div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
         <div className='gap-3 flex flex-col justify-center py-14 lg:px-28 px-5 absolute top-0 left-0 z-10 h-screen w-screen bg-gradient-to-b to-transparent from-black ' ></div>
       </section>

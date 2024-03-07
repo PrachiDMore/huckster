@@ -19,7 +19,7 @@ import axios from 'axios'
 const syne = DM_Sans({ subsets: ['latin'] })
 
 export default function Home() {
-	const [index, setIndex] = useState(-1);
+	const [index, setIndex] = useState(0);
 	const [logos, setLogos] = useState([])
 	const [creations, setCreations] = useState([])
 	const [services, setServices] = useState([])
@@ -54,6 +54,36 @@ export default function Home() {
 
 			})
 	}, [])
+
+	useEffect(() => {
+		var videoElement = document.getElementById('video-main');
+
+		function isElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		// Function to mute the video
+		function muteVideoIfNotInView() {
+			if (isElementInViewport(videoElement)) {
+				videoElement.muted = false; // Unmute the video
+			} else {
+				videoElement.muted = true; // Mute the video
+			}
+		}
+
+		muteVideoIfNotInView();
+
+		window.addEventListener('scroll', function () {
+			muteVideoIfNotInView();
+		});
+	}, [])
+
 
 	const handleHoverColors = () => {
 		const random = Math.random() * 100;
@@ -102,14 +132,18 @@ export default function Home() {
 		<Layout>
 			{/* hero section */}
 			<section className='relative h-screen w-screen bg-black' >
-			<video controls={false} autoPlay muted loop className={index === -1 ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src={banner} alt="" />
+				<video controls={false} id={`video-main`} muted={index !== creations?.slice(0, 4)?.filter((value) => {
+					return value?.display
+				}).length} autoPlay loop className={creations?.slice(0, 4)?.filter((value) => {
+					return value?.display
+				}).length === index ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src={banner} alt="" />
 				{
 					creations?.slice(0, 4)?.filter((value) => {
 						return value?.display
 					})?.sort((a, b) => {
 						return a.index - b.index
 					})?.map((value, int) => {
-						return <video controls={false} autoPlay muted loop className={index === int ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src={value?.videoURL} alt="" />
+						return <video id={`video-${int}`} muted={index !== int} controls={false} autoPlay loop className={index === int ? 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-100 duration-500' : 'object-cover h-screen w-screen absolute top-0 left-0 z-[0] opacity-0 duration-500'} width={100} height={100} src={value?.videoURL} alt="" />
 					})
 				}
 				<div className='h-screen w-screen absolute top-0 left-0 z-[5] bg-gradient-to-b from-transparent via-black/5 to-black'></div>
@@ -120,7 +154,9 @@ export default function Home() {
 						})?.sort((a, b) => {
 							return a.index - b.index
 						})?.map((value, int) => {
-							return <SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(int) }} className={twMerge(index === int ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>{value?.title}</h1></SlideReveal>
+							return <SlideReveal delay={0.2}><h1 onMouseEnter={() => { setIndex(int) }} onMouseLeave={() => setIndex(creations?.slice(0, 4)?.filter((value) => {
+								return value?.display
+							}).length)} className={twMerge(index === int ? `w-max cursor-pointer text-white/60 duration-150 font-bold lg:text-7xl text-3xl capitalize ` : 'w-max cursor-pointer hover:text-white/60 duration-150 text-white font-bold lg:text-7xl text-3xl capitalize ', handleHoverColors())}>{value?.title}</h1></SlideReveal>
 						})
 					}
 				</div>
@@ -237,7 +273,7 @@ export default function Home() {
 							return <Dropdown number={(index + 1) < 9 ? `0${index + 1}` : `${index + 1}`} title={service?.service} list={service?.subServices?.sort((a, b) => {
 								return a.index - b.index
 							})?.map((subservice) => {
-								return 	subservice.subService
+								return subservice.subService
 							})} subtitle={service?.description} />
 						})
 					}
