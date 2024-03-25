@@ -9,7 +9,7 @@ import { toast } from 'sonner'
 import { IoClose } from 'react-icons/io5'
 import { FaRegFile } from "react-icons/fa";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from '../config'
+import { storage } from '@/utils/config'
 
 const inter = DM_Sans({ subsets: ['latin'] })
 const syne = DM_Sans({ subsets: ['latin'] })
@@ -22,10 +22,17 @@ const Careers = () => {
   const [show, setShow] = useState("")
 
   useEffect(() => {
-    axios("https://huckster-backend.vercel.app/get-career")
-      .then((res) => {
-        setJobs(res.data.response)
-      })
+    try {
+      axios("https://huckster-backend.vercel.app/get-career")
+        .then((res) => {
+          setJobs(res.data.response)
+        })
+        .catch((err) => {
+
+        })
+    } catch (error) {
+
+    }
   }, [])
 
   function handleSubmit(e) {
@@ -80,13 +87,13 @@ const Careers = () => {
   return (
     <>
       <Layout>
-        <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 mt-20 flex lg:flex-row flex-col justify-center items-end gap-5 '>
-          <h1 className={'lg:text-[150px] text-4xl font-bold leading-none  ' + syne.className}>Lets <br />talk?</h1>
-          <p className={'mb-5 text-xl ' + inter.className}>We'd love to explore what <br />we can do together!</p>
+        <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 mt-20 flex lg:flex-row flex-col justify-center lg:items-end items-center gap-5 '>
+          <h1 className={'lg:text-[150px] text-4xl font-bold leading-none  ' + syne.className}>Lets <br className='lg:block hidden' />talk?</h1>
+          <p className={'mb-5 text-xl lg:text-left text-center ' + inter.className}>We'd love to explore what <br />we can do together!</p>
         </div>
         <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 flex lg:flex-row flex-col justify-between items-center gap-16 '>
-          <h1 className={'w-[60%] text-6xl font-bold leading-none  ' + syne.className}>If you find yourself thinking, 'I'd like to be a part of this,'</h1>
-          <p className={'w-[40%] text-xl mb-5' + inter.className}>Collaborate with us</p>
+          <h1 className={'lg:w-[60%] w-full lg:text-6xl text-5xl text-center lg:text-left font-bold leading-none  ' + syne.className}>If you find yourself thinking, 'I'd like to be a part of this,'</h1>
+          <p className={'lg:w-[40%] w-full text-center lg:text-left text-xl mb-5' + inter.className}>Collaborate with us</p>
         </div>
         <div className='w-screen lg:px-28 px-5 lg:py-20 py-10 flex justify-between items-center gap-16 '>
           {
@@ -111,7 +118,7 @@ const Careers = () => {
         </div>
       </Layout>
       <div className={show != "" ? 'flex justify-center items-center opacity-100 duration-150 pointer-events-auto h-screen w-screen fixed z-[5000] bg-black/50 top-0 left-0' : 'h-screen w-screen fixed z-[5000] bg-black/50 top-0 left-0 opacity-0 duration-150 pointer-events-none flex justify-center items-center '}>
-        <form onSubmit={handleSubmit} className={'w-[40vw] p-5 border bg-black border-white/30 ' + inter.className}>
+        <form onSubmit={handleSubmit} className={'lg:w-[40vw] w-[90vw] p-5 border bg-black border-white/30 ' + inter.className}>
           <div className='flex justify-between items-center'>
             <h2 className='text-xl font-bold text-white'>Submit application</h2>
             <IoClose onClick={() => setShow("")} className='cursor-pointer text-white text-2xl' />
